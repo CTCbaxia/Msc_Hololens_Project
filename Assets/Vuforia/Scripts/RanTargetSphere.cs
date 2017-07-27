@@ -5,6 +5,17 @@ using UnityEngine;
 public class RanTargetSphere : MonoBehaviour {
 
 	public GameObject Dot1, Dot2, Dot3, Dot4, Dot5, Dot6, Dot7;
+	public int trials = 14;
+
+	bool RanCount = false;
+	int[] arr;
+	int i;
+	int j;
+	int k = 0;
+	int index;
+	int tmp;
+	int TrialNum;
+
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +36,8 @@ public class RanTargetSphere : MonoBehaviour {
 
 			DotPosition_1 ();
 			print(" keyQ was pressed");
-			print (Random.Range (0,10));
+//			print (Random.Range (0,10));
+			RanTarget ();
 		}
 		if (Input.GetKeyDown(KeyCode.W)){
 
@@ -61,9 +73,81 @@ public class RanTargetSphere : MonoBehaviour {
 			print(" keyU was pressed");
 		}
 
+		//test random target
+		if (Input.GetKeyDown(KeyCode.A)){
+
+			RanTarget ();
+			print(" ------test random target------Press A");
+
+		}
 
 	}
 
+	//generate equimultiple random target dot
+	void RanTarget(){
+		
+		//generate random arry
+		if (!RanCount) {
+			arr = new int[trials];
+
+			for (i = 1; i <= trials; i++) {
+				arr [i - 1] = i;
+			}
+
+			for (j = trials; j >= 1; j--) {
+				index = Random.Range (0,trials); //get 0-trials randomly
+				//exchange the value of arr[index] and arr[j-1]
+				tmp = arr[index];
+				arr [index] = arr [j - 1];
+				arr [j - 1] = tmp;
+
+			}
+				
+			RanCount = true;
+		}
+
+		//show random target
+		if (RanCount) {
+			TrialNum = arr [k];
+			print (TrialNum);
+		}
+
+		if (TrialNum >= 1 && TrialNum <= 2) {
+			k++;
+			DotPosition_1 ();
+		}
+		if (TrialNum >= 3 && TrialNum <= 4) {
+			k++;
+			DotPosition_2 ();
+		}
+		if (TrialNum >= 5 && TrialNum <= 6) {
+			k++;
+			DotPosition_3 ();
+		}
+		if (TrialNum >= 7 && TrialNum <= 8) {
+			k++;
+			DotPosition_4 ();
+		}
+		if (TrialNum >= 9 && TrialNum <= 10) {
+			k++;
+			DotPosition_5 ();
+		}
+		if (TrialNum >= 11 && TrialNum <= 12) {
+			k++;
+			DotPosition_6 ();
+		}
+		if (TrialNum >= 13 && TrialNum <= 14) {
+			k++;
+			DotPosition_7 ();
+		}
+
+
+		if (k > 8) {
+			k = 0;
+			RanCount = false;
+			print("finish the first round");
+		}
+	}
 
 	//show corresponding Dot 
 	void DotPosition_1(){

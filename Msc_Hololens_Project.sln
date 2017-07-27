@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{8E62E5E4-477C-4880-AB7B-D209381127FA}") = "Msc_Hololens_Project", "Assembly-CSharp.csproj", "{2E58A6FE-7CE4-8FE5-D0DE-226CFA8E8ABC}"
+EndProject
+Project("{8E62E5E4-477C-4880-AB7B-D209381127FA}") = "Msc_Hololens_Project", "Assembly-CSharp-Editor.csproj", "{2231FEC0-E608-6493-2B53-21209681AB91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E58A6FE-7CE4-8FE5-D0DE-226CFA8E8ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E58A6FE-7CE4-8FE5-D0DE-226CFA8E8ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E58A6FE-7CE4-8FE5-D0DE-226CFA8E8ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E58A6FE-7CE4-8FE5-D0DE-226CFA8E8ABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2231FEC0-E608-6493-2B53-21209681AB91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2231FEC0-E608-6493-2B53-21209681AB91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2231FEC0-E608-6493-2B53-21209681AB91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2231FEC0-E608-6493-2B53-21209681AB91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
