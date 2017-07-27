@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/170726-Vuforia.unity
+  isLoaded: 1
+  isActive: 1
