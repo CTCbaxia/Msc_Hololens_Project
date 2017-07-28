@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/170726-Vuforia.unity
+- path: Assets/TC-MscProject.unity
   isLoaded: 1
   isActive: 1
