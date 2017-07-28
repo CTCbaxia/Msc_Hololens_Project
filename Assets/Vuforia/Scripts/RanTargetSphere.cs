@@ -26,17 +26,18 @@ public class RanTargetSphere : MonoBehaviour {
 		Dot5.SetActive (false);
 		Dot6.SetActive (false);
 		Dot7.SetActive (false);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+//		print ("calculate delta time");
+//		print(Time.deltaTime);
 		//test with keyboard to show corresponding Dot
 		if (Input.GetKeyDown(KeyCode.Q)){
 
 			DotPosition_1 ();
 			print(" keyQ was pressed");
-//			print (Random.Range (0,10));
 			RanTarget ();
 		}
 		if (Input.GetKeyDown(KeyCode.W)){
@@ -78,7 +79,13 @@ public class RanTargetSphere : MonoBehaviour {
 
 			RanTarget ();
 			print(" ------test random target------Press A");
+			print(Time.deltaTime);
 
+		}
+
+		//repeat the random showing target function per second, start from 2 second
+		if(Input.GetKeyDown(KeyCode.Z)){
+			InvokeRepeating("RanTarget", 2.0f, 0.5f);
 		}
 
 	}
@@ -96,18 +103,24 @@ public class RanTargetSphere : MonoBehaviour {
 
 			for (j = trials; j >= 1; j--) {
 				index = Random.Range (0,trials); //get 0-trials randomly
+
 				//exchange the value of arr[index] and arr[j-1]
 				tmp = arr[index];
 				arr [index] = arr [j - 1];
 				arr [j - 1] = tmp;
-
 			}
 				
 			RanCount = true;
 		}
+		if (k >= 14) {
+			k = 0;
+			RanCount = false;
+			print("finish the first round");
+		}
 
 		//show random target
 		if (RanCount) {
+			print(k);
 			TrialNum = arr [k];
 			print (TrialNum);
 		}
@@ -142,11 +155,7 @@ public class RanTargetSphere : MonoBehaviour {
 		}
 
 
-		if (k > 8) {
-			k = 0;
-			RanCount = false;
-			print("finish the first round");
-		}
+
 	}
 
 	//show corresponding Dot 
@@ -158,9 +167,6 @@ public class RanTargetSphere : MonoBehaviour {
 		Dot5.SetActive (false);
 		Dot6.SetActive (false);
 		Dot7.SetActive (false);
-
-
-
 	}
 
 	void DotPosition_2(){
@@ -171,8 +177,6 @@ public class RanTargetSphere : MonoBehaviour {
 		Dot5.SetActive (false);
 		Dot6.SetActive (false);
 		Dot7.SetActive (false);
-
-	
 	}
 
 	void DotPosition_3(){
@@ -194,6 +198,7 @@ public class RanTargetSphere : MonoBehaviour {
 		Dot6.SetActive (false);
 		Dot7.SetActive (false);
 	}
+
 	void DotPosition_5(){
 		Dot1.SetActive (false);
 		Dot2.SetActive (false);
@@ -203,6 +208,7 @@ public class RanTargetSphere : MonoBehaviour {
 		Dot6.SetActive (false);
 		Dot7.SetActive (false);
 	}
+
 	void DotPosition_6(){
 		Dot1.SetActive (false);
 		Dot2.SetActive (false);
@@ -212,6 +218,7 @@ public class RanTargetSphere : MonoBehaviour {
 		Dot6.SetActive (true);
 		Dot7.SetActive (false);
 	}
+
 	void DotPosition_7(){
 		Dot1.SetActive (false);
 		Dot2.SetActive (false);
