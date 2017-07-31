@@ -27,13 +27,13 @@ public class RanTargetSphere : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-	        Dot1.SetActive (false);
-	        Dot2.SetActive (false);
-	        Dot3.SetActive (false);
-	        Dot4.SetActive (false);
-	        Dot5.SetActive (false);
-	        Dot6.SetActive (false);
-	        Dot7.SetActive (false);
+//	        Dot1.SetActive (false);
+//	        Dot2.SetActive (false);
+//	        Dot3.SetActive (false);
+//	        Dot4.SetActive (false);
+//	        Dot5.SetActive (false);
+//	        Dot6.SetActive (false);
+//	        Dot7.SetActive (false);
 	Scene_Cond_1.SetActive (false);
 	Scene_Ins.SetActive (false);
 	    }
@@ -94,21 +94,29 @@ public class RanTargetSphere : MonoBehaviour {
 			if(Input.GetKeyDown (KeyCode.S) || time_cond_1 > 4){
 					print(" ------test random target------Press S");
 					Scene_Ins.SetActive (false);
-					Scene_Cond_1.SetActive (true);
-//						scene_cond_1 = false;//condition1 start
+					Scene_Cond_1.SetActive (false);			
 
-					print("time_cond_1:  "+time_cond_1);
+					scene_cond_1 = false; //quit the trial
+
+					print("time_rest:  "+time_rest);
+					print("time_cond_1:  "+time_cond_1);//get the time for the trial
+					time_rest = 0;
 					time_cond_1 = 0; //initialize the count time
-
+					
 					scene_cond_1 = true;
-					RanTarget ();
+					RanTarget ();	
+
 
 		    }
 
+			//have a rest for 1 second
+			if(scene_cond_1 && time_rest <=1 ){
+				time_rest += Time.deltaTime;
+			}
 			//count time for every trial
-			if(scene_cond_1 && time_cond_1<= 4){
+			if(scene_cond_1 && time_cond_1<= 4 && time_rest >1){
+				Scene_Cond_1.SetActive (true);
 				time_cond_1 += Time.deltaTime;
-			Scene_Cond_1.SetActive (true);
 
 			}
 		//if press the button or overtime
