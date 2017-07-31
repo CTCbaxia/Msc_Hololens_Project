@@ -11,9 +11,10 @@ public class RanTargetSphere : MonoBehaviour {
 //	public GameObject Scene_Rest;
 	public static string DotNum;
 	public static string ObjAsw;
+	public static int TskNum = 0;
+	public static float time_cond_1 = 0;
 
 	private bool press_button;
-	private float time_cond_1 = 0;
 	private float time_rest = 0;
 //	private bool scene_ins;
 	private bool scene_rest;
@@ -42,7 +43,7 @@ public class RanTargetSphere : MonoBehaviour {
 					Scene_Ins.SetActive (true);
 					Scene_Cond_1.SetActive (false);
 					print(" ------welcome to the instruction ");
-//					scene_ins = true;
+
 			}
 
 			//press S to start the trial or repeat the trial
@@ -58,16 +59,16 @@ public class RanTargetSphere : MonoBehaviour {
 					press_button = false;
 					scene_cond_1 = false; //quit the trial
 					Scene_Cond_1.SetActive (false);
+					GameObject.Find("XmlData").SendMessage("CreateXML_4");
+
 					print("time_rest:  "+time_rest);
 					print("time_cond_1:  "+time_cond_1);//get the time for the trial
 					time_rest = 0;
 					time_cond_1 = 0; //initialize the count time
-					
 
 					scene_cond_1 = true;
 					RanTarget ();	
-					GameObject.Find("XmlData").SendMessage("CreateXML_4");
-
+					print("调用数据一次");
 		    }
 
 
@@ -139,30 +140,37 @@ public class RanTargetSphere : MonoBehaviour {
 
 	        if (TrialNum >= 1 && TrialNum <= 2) {
 		            k++;
+					TskNum++;
 		            DotPosition_1 ();
 		        }
 	        if (TrialNum >= 3 && TrialNum <= 4) {
 		            k++;
+					TskNum++;
 		            DotPosition_2 ();
 		        }
 	        if (TrialNum >= 5 && TrialNum <= 6) {
 		            k++;
+					TskNum++;
 		            DotPosition_3 ();
 		        }
 	        if (TrialNum >= 7 && TrialNum <= 8) {
 		            k++;
+					TskNum++;
 		            DotPosition_4 ();
 		        }
 	        if (TrialNum >= 9 && TrialNum <= 10) {
 		            k++;
+					TskNum++;
 		            DotPosition_5 ();
 		        }
 	        if (TrialNum >= 11 && TrialNum <= 12) {
 		            k++;
+					TskNum++;	
 		            DotPosition_6 ();
 		        }
 	        if (TrialNum >= 13 && TrialNum <= 14) {
 		            k++;
+					TskNum++;
 		            DotPosition_7 ();
 		        }
 
