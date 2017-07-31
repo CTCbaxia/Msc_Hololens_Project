@@ -9,6 +9,7 @@ public class RanTargetSphere : MonoBehaviour {
 	public GameObject Scene_Ins;
 	public GameObject Scene_Cond_1;
 //	public GameObject Scene_Rest;
+	public static string DotNum;
 
 	private float time_cond_1 = 0;
 	private float time_rest = 0;
@@ -27,15 +28,8 @@ public class RanTargetSphere : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-//	        Dot1.SetActive (false);
-//	        Dot2.SetActive (false);
-//	        Dot3.SetActive (false);
-//	        Dot4.SetActive (false);
-//	        Dot5.SetActive (false);
-//	        Dot6.SetActive (false);
-//	        Dot7.SetActive (false);
-	Scene_Cond_1.SetActive (false);
-	Scene_Ins.SetActive (false);
+		Scene_Cond_1.SetActive (false);
+		Scene_Ins.SetActive (false);
 	    }
     
     // Update is called once per frame
@@ -90,6 +84,7 @@ public class RanTargetSphere : MonoBehaviour {
 					Scene_Cond_1.SetActive (false);
 					print(" ------test random target------Press A");
 			}
+
 			//press S to start the trial or repeat the trial
 			if(Input.GetKeyDown (KeyCode.S) || time_cond_1 > 4){
 					print(" ------test random target------Press S");
@@ -117,6 +112,7 @@ public class RanTargetSphere : MonoBehaviour {
 			if(scene_cond_1 && time_cond_1<= 4 && time_rest >1){
 				Scene_Cond_1.SetActive (true);
 				time_cond_1 += Time.deltaTime;
+				GameObject.Find("XmlData").SendMessage("CreateXML_4");
 
 			}
 		//if press the button or overtime
@@ -205,6 +201,7 @@ public class RanTargetSphere : MonoBehaviour {
 
     //show corresponding Dot 
     void DotPosition_1(){
+			DotNum = "-3";
 	        Dot1.SetActive (true);
 	        Dot2.SetActive (false);
 	        Dot3.SetActive (false);
@@ -215,6 +212,7 @@ public class RanTargetSphere : MonoBehaviour {
 	    }
 
     void DotPosition_2(){
+			DotNum = "-2";
 	        Dot1.SetActive (false);
 	        Dot2.SetActive (true);
 	        Dot3.SetActive (false);
@@ -225,6 +223,7 @@ public class RanTargetSphere : MonoBehaviour {
 	    }
 
     void DotPosition_3(){
+			DotNum = "-1";
 	        Dot1.SetActive (false);
 	        Dot2.SetActive (false);
 	        Dot3.SetActive (true);
@@ -236,6 +235,7 @@ public class RanTargetSphere : MonoBehaviour {
 
 
     void DotPosition_4(){
+			DotNum = "0";
 	        Dot1.SetActive (false);
 	        Dot2.SetActive (false);
 	        Dot3.SetActive (false);
@@ -246,6 +246,7 @@ public class RanTargetSphere : MonoBehaviour {
 	    }
 
     void DotPosition_5(){
+			DotNum = "1";
 	        Dot1.SetActive (false);
 	        Dot2.SetActive (false);
 	        Dot3.SetActive (false);
@@ -256,6 +257,7 @@ public class RanTargetSphere : MonoBehaviour {
 	    }
 
     void DotPosition_6(){
+			DotNum = "2";
 	        Dot1.SetActive (false);
 	        Dot2.SetActive (false);
 	        Dot3.SetActive (false);
@@ -266,6 +268,7 @@ public class RanTargetSphere : MonoBehaviour {
 	    }
 
     void DotPosition_7(){
+			DotNum = "3";
 	        Dot1.SetActive (false);
 	        Dot2.SetActive (false);
 	        Dot3.SetActive (false);
