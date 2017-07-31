@@ -1,1325 +1,209 @@
 <objects>
   <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
+    <DotNum Camera_point="DotNum">
+    </DotNum>
   </messages>
   <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
+    <DotNum Camera_point="DotNum">-1</DotNum>
   </messages>
   <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
+    <DotNum Camera_point="DotNum">2</DotNum>
   </messages>
   <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
+    <DotNum Camera_point="DotNum">-3</DotNum>
   </messages>
   <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
+    <DotNum Camera_point="DotNum">3</DotNum>
   </messages>
   <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
+    <DotNum Camera_point="DotNum">-2</DotNum>
   </messages>
   <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
+    <DotNum Camera_point="DotNum">2</DotNum>
   </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">0</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">-3</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
-  </messages>
-  <messages id="Num">
-    <Num Camera_point="Num">2</Num>
+  <messages id="DotNum">
+    <DotNum DotPosition="DotNum">
+    </DotNum>
   </messages>
+  <messages id="DotNum">
+    <DotNum DotPosition="DotNum">-3</DotNum>
+  </messages>
+  <messages id="DotNum">
+    <DotNum DotPosition="DotNum">2</DotNum>
+  </messages>
+  <messages id="DotNum">
+    <DotNum DotPosition="DotNum">-1</DotNum>
+  </messages>
+  <messages id="DotNum">
+    <DotNum DotPosition="DotNum">0</DotNum>
+  </messages>
+  <messages id="DotNum">
+    <DotNum DotPosition="DotNum">-3</DotNum>
+  </messages>
+  <messages>
+    <DotNum>
+    </DotNum>
+  </messages>
+  <messages>
+    <DotNum>-3</DotNum>
+  </messages>
+  <messages>
+    <DotNum>-1</DotNum>
+  </messages>
+  <messages>
+    <DotNum>-3</DotNum>
+  </messages>
+  <messages>
+    <DotNum>1</DotNum>
+  </messages>
+  <messages>
+    <DotNum>2</DotNum>
+  </messages>
+  <messages>
+    <DotNum>3</DotNum>
+  </messages>
+  <messages>
+    <DotNum>
+    </DotNum>
+  </messages>
+  <messages>
+    <DotNum>2</DotNum>
+  </messages>
+  <messages>
+    <DotNum>-2</DotNum>
+  </messages>
+  <messages>
+    <DotNum>0</DotNum>
+  </messages>
+  <messages>
+    <DotNum>-1</DotNum>
+  </messages>
+  <block condition="1">
+    <Task Task="1">
+      <offset>
+      </offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>0</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>0</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>1</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>-2</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>-1</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>-1</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>-3</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>3</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>
+      </offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>-3</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>-2</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>0</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>-3</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>
+      </offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>3</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>-3</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>0</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>-2</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>-1</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>-1</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>3</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>0</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>2</offset>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>-3</offset>
+    </Task>
+  </block>
 </objects>

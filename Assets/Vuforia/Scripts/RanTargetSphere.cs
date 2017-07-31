@@ -10,9 +10,12 @@ public class RanTargetSphere : MonoBehaviour {
 	public GameObject Scene_Cond_1;
 //	public GameObject Scene_Rest;
 	public static string DotNum;
+	public static string ObjAsw;
 
+	private bool press_button;
 	private float time_cond_1 = 0;
 	private float time_rest = 0;
+//	private bool scene_ins;
 	private bool scene_rest;
 	private bool scene_cond_1;
     bool RanCount = false;
@@ -34,96 +37,64 @@ public class RanTargetSphere : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-
-	//        print(Time.deltaTime);
-
-	        //test with keyboard to show corresponding Dot
-	        if (Input.GetKeyDown(KeyCode.Q)){
-
-		            DotPosition_1 ();
-		            print(" keyQ was pressed");
-
-		        }
-	        if (Input.GetKeyDown(KeyCode.W)){
-
-		            DotPosition_2 ();
-		            print(" keyW was pressed");
-
-		        }
-	        if (Input.GetKeyDown (KeyCode.E)) {
-
-		            DotPosition_3 ();
-		            print(" keyE was pressed");
-		        }
-	        if (Input.GetKeyDown (KeyCode.R)) {
-
-		            DotPosition_4 ();
-		            print(" keyR was pressed");
-
-		        }
-	        if (Input.GetKeyDown (KeyCode.T)) {
-
-		            DotPosition_5 ();
-		            print(" keyT was pressed");
-
-		        }
-	        if (Input.GetKeyDown (KeyCode.Y)) {
-
-		            DotPosition_6 ();
-		            print(" keyY was pressed");
-		        }
-	        if (Input.GetKeyDown (KeyCode.U)) {
-
-		            DotPosition_7 ();
-		            print(" keyU was pressed");
-		        }
-
-	        //test random target
+			//Press A to show instruction scene
 			if (Input.GetKeyDown (KeyCode.A)) {
 					Scene_Ins.SetActive (true);
 					Scene_Cond_1.SetActive (false);
-					print(" ------test random target------Press A");
+					print(" ------welcome to the instruction ");
+//					scene_ins = true;
 			}
 
 			//press S to start the trial or repeat the trial
-			if(Input.GetKeyDown (KeyCode.S) || time_cond_1 > 4){
-					print(" ------test random target------Press S");
+			if (Input.GetKeyDown (KeyCode.S)) {
 					Scene_Ins.SetActive (false);
-					Scene_Cond_1.SetActive (false);			
+					Scene_Cond_1.SetActive (false);
+					print(" ------welcome to  condition 1 ");
+					press_button = true;
+			}
 
+			//start the trial
+			if(press_button || time_cond_1 > 4){
+					press_button = false;
 					scene_cond_1 = false; //quit the trial
-
+					Scene_Cond_1.SetActive (false);
 					print("time_rest:  "+time_rest);
 					print("time_cond_1:  "+time_cond_1);//get the time for the trial
 					time_rest = 0;
 					time_cond_1 = 0; //initialize the count time
 					
+
 					scene_cond_1 = true;
 					RanTarget ();	
-
+					GameObject.Find("XmlData").SendMessage("CreateXML_4");
 
 		    }
+
 
 			//have a rest for 1 second
 			if(scene_cond_1 && time_rest <=1 ){
 				time_rest += Time.deltaTime;
 			}
+
 			//count time for every trial
 			if(scene_cond_1 && time_cond_1<= 4 && time_rest >1){
 				Scene_Cond_1.SetActive (true);
 				time_cond_1 += Time.deltaTime;
-				GameObject.Find("XmlData").SendMessage("CreateXML_4");
+
+				//if the observer gives the answer
+				if(Input.GetKeyDown(KeyCode.J) ){
+					press_button = true;
+					ObjAsw = "nonright";//change to 0
+				}
+				if(Input.GetKeyDown(KeyCode.K) ){
+					press_button = true;
+					ObjAsw = "right";//change to 1
+				}
 
 			}
-		//if press the button or overtime
-		if(Input.GetKeyDown (KeyCode.S)){
-			Scene_Ins.SetActive (false);
-//			Scene_Rest.SetActive (true);//have a rest 
-			Scene_Cond_1.SetActive (false);
 
-		}
 
-	        //repeat the random showing target function per second, start from 2 second
+	        //Practice: repeat the random showing target function per second, start from 2 second
 //		        if(Input.GetKeyDown(KeyCode.Z)){
 //			            InvokeRepeating("RanTarget", 2.0f, 0.5f);
 //			    }

@@ -19,7 +19,7 @@ public class XmlDataCollection : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.L)){
 
 
-			print(" keyKKKKKKKKKKKK was pressed" + DotNum );
+			print(" keyLLLLLLLLLLLL was pressed" + DotNum );
 
 		}
 	}
@@ -45,14 +45,16 @@ public class XmlDataCollection : MonoBehaviour {
 			            XmlDocument xml = new XmlDocument();
 			            xml.Load(path);
 			            XmlNode root = xml.SelectSingleNode("objects");
-			            XmlElement element = xml.CreateElement("messages");
-			            element.SetAttribute("id", "Num");
-			            XmlElement elementChild1 = xml.CreateElement("Num");
+			            XmlElement element = xml.CreateElement("block");
+						element.SetAttribute("condition", "1");
+			            XmlElement elementTask = xml.CreateElement("Task");
+			            elementTask.SetAttribute("Task", "1");
+						XmlElement elementChild1 = xml.CreateElement("offset");
 
-			            elementChild1.SetAttribute("Camera_point", "Num");
 			            elementChild1.InnerText = DotNum;
-			            element.AppendChild(elementChild1);
 
+						elementTask.AppendChild(elementChild1);
+			            element.AppendChild(elementTask);
 			            root.AppendChild(element);
 
 			            xml.AppendChild(root);
