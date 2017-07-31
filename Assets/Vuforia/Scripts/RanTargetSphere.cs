@@ -6,6 +6,8 @@ public class RanTargetSphere : MonoBehaviour {
 
 	    public GameObject Dot1, Dot2, Dot3, Dot4, Dot5, Dot6, Dot7;
 	    public int trials = 14;
+		public GameObject Scene_Ins;
+		public GameObject Scene_Cond_1;
 
 	    bool RanCount = false;
 	    int[] arr;
@@ -26,19 +28,21 @@ public class RanTargetSphere : MonoBehaviour {
 		        Dot5.SetActive (false);
 		        Dot6.SetActive (false);
 		        Dot7.SetActive (false);
-
+		Scene_Cond_1.SetActive (false);
+		Scene_Ins.SetActive (false);
 		    }
 	    
 	    // Update is called once per frame
 	    void Update () {
-		//        print ("calculate delta time");
+
 		//        print(Time.deltaTime);
+
 		        //test with keyboard to show corresponding Dot
 		        if (Input.GetKeyDown(KeyCode.Q)){
 
 			            DotPosition_1 ();
 			            print(" keyQ was pressed");
-			            RanTarget ();
+
 			        }
 		        if (Input.GetKeyDown(KeyCode.W)){
 
@@ -75,24 +79,31 @@ public class RanTargetSphere : MonoBehaviour {
 			        }
 
 		        //test random target
-		        if (Input.GetKeyDown(KeyCode.A)){
+				if (Input.GetKeyDown (KeyCode.A)) {
+						Scene_Ins.SetActive (true);
+						Scene_Cond_1.SetActive (false);
+						print(" ------test random target------Press A");
+				}
+				if(Input.GetKeyDown (KeyCode.S)){
+						Scene_Ins.SetActive (false);
+						Scene_Cond_1.SetActive (true);
 
 			            RanTarget ();
-			            print(" ------test random target------Press A");
+			            print(" ------test random target------Press S");
 			            print(Time.deltaTime);
 
-			        }
+			    }
 
 		        //repeat the random showing target function per second, start from 2 second
 		        if(Input.GetKeyDown(KeyCode.Z)){
 			            InvokeRepeating("RanTarget", 2.0f, 0.5f);
-			        }
+			    }
 
 		    }
 
 	    //generate equimultiple random target dot
 	    void RanTarget(){
-		        
+		print ("run RanTarget");
 		        //generate random arry
 		        if (!RanCount) {
 			            arr = new int[trials];
@@ -120,9 +131,9 @@ public class RanTargetSphere : MonoBehaviour {
 
 		        //show random target
 		        if (RanCount) {
-			            print(k);
+//			            print(k);
 			            TrialNum = arr [k];
-			            print (TrialNum);
+//			            print (TrialNum);
 			        }
 
 

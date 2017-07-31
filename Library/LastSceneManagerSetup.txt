@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/CTC_Msc_Project.unity
+  isLoaded: 1
+  isActive: 1
