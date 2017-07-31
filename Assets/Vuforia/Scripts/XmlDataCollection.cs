@@ -7,6 +7,9 @@ using System.IO;
 public class XmlDataCollection : MonoBehaviour {
 
 	string DotNum;
+	string ObjAsw;
+	string TskNum;
+	string time_cond_1;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,13 +18,11 @@ public class XmlDataCollection : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		DotNum = RanTargetSphere.DotNum ;
+		ObjAsw = RanTargetSphere.ObjAsw ;
+		TskNum = RanTargetSphere.TskNum.ToString() ;
+		time_cond_1 = RanTargetSphere.time_cond_1.ToString ();
 		CreateXML();
-		if (Input.GetKeyDown(KeyCode.L)){
 
-
-			print(" keyLLLLLLLLLLLL was pressed" + DotNum );
-
-		}
 	}
 
 	void CreateXML(){
@@ -48,12 +49,18 @@ public class XmlDataCollection : MonoBehaviour {
 			            XmlElement element = xml.CreateElement("block");
 						element.SetAttribute("condition", "1");
 			            XmlElement elementTask = xml.CreateElement("Task");
-			            elementTask.SetAttribute("Task", "1");
+			            elementTask.SetAttribute("Task", TskNum);
 						XmlElement elementChild1 = xml.CreateElement("offset");
-
-			            elementChild1.InnerText = DotNum;
-
+			            	elementChild1.InnerText = DotNum;
 						elementTask.AppendChild(elementChild1);
+
+						XmlElement elementChild2 = xml.CreateElement("Answer");
+							elementChild2.InnerText = ObjAsw;
+						elementTask.AppendChild(elementChild2);
+						XmlElement elementChild3 = xml.CreateElement("RT");
+							elementChild3.InnerText = time_cond_1;
+						elementTask.AppendChild(elementChild3);
+						
 			            element.AppendChild(elementTask);
 			            root.AppendChild(element);
 
