@@ -5,7 +5,7 @@ using UnityEngine;
 public class RanTargetSphere : MonoBehaviour {
 
     public GameObject Dot1, Dot2, Dot3, Dot4, Dot5, Dot6, Dot7;
-    public int trials = 14;
+    public int trials = 14;//the number of all trial in one condition
 	public GameObject Scene_Ins;
 	public GameObject Scene_Cond_1;
 //	public GameObject Scene_Rest;
@@ -19,6 +19,7 @@ public class RanTargetSphere : MonoBehaviour {
 //	private bool scene_ins;
 	private bool scene_rest;
 	private bool scene_cond_1;
+	private bool scene_practice;
     bool RanCount = false;
     int[] arr;
     int i;
@@ -26,7 +27,8 @@ public class RanTargetSphere : MonoBehaviour {
     int k = 0;
     int index;
     int tmp;
-    int TrialNum;
+    int TrialNum;//the offset for every trial
+
 
 
 
@@ -45,13 +47,29 @@ public class RanTargetSphere : MonoBehaviour {
 					print(" ------welcome to the instruction ");
 
 			}
-
-			//press S to start the trial or repeat the trial
-			if (Input.GetKeyDown (KeyCode.S)) {
+			//Press S to start the practice trials
+	        if(Input.GetKeyDown(KeyCode.S)){
 					Scene_Ins.SetActive (false);
 					Scene_Cond_1.SetActive (false);
-					print(" ------welcome to  condition 1 ");
+					trials = 7;
+					scene_practice = true;
 					press_button = true;
+					print(" ------welcome to the practice section ");
+
+		    }
+
+
+			//press D to start condition1
+			if (Input.GetKeyDown (KeyCode.D)) {
+					Scene_Ins.SetActive (false);
+					Scene_Cond_1.SetActive (false);
+					trials = 14;
+
+					scene_practice = false;
+					press_button = true;
+			print(" ------welcome to  condition 1 "+DotNum+"and"+ObjAsw);
+					
+					
 			}
 
 			//start the trial
@@ -59,16 +77,21 @@ public class RanTargetSphere : MonoBehaviour {
 					press_button = false;
 					scene_cond_1 = false; //quit the trial
 					Scene_Cond_1.SetActive (false);
-					GameObject.Find("XmlData").SendMessage("CreateXML_4");
 
-					print("time_rest:  "+time_rest);
+					if(!scene_practice){
+//						ObjAsw = " ";为什么在这里赋值都没用？？？
+						GameObject.Find("XmlData").SendMessage("CreateXML_C1");
+					}
+
 					print("time_cond_1:  "+time_cond_1);//get the time for the trial
+					
+					//initialize for every trial
 					time_rest = 0;
-					time_cond_1 = 0; //initialize the count time
+					time_cond_1 = 0; 
 
 					scene_cond_1 = true;
 					RanTarget ();	
-					print("调用数据一次");
+
 		    }
 
 
@@ -81,6 +104,7 @@ public class RanTargetSphere : MonoBehaviour {
 			if(scene_cond_1 && time_cond_1<= 4 && time_rest >1){
 				Scene_Cond_1.SetActive (true);
 				time_cond_1 += Time.deltaTime;
+				ObjAsw = " ";//为什么在这里赋值就有用
 
 				//if the observer gives the answer
 				if(Input.GetKeyDown(KeyCode.J) ){
@@ -95,16 +119,14 @@ public class RanTargetSphere : MonoBehaviour {
 			}
 
 
-	        //Practice: repeat the random showing target function per second, start from 2 second
-//		        if(Input.GetKeyDown(KeyCode.Z)){
-//			            InvokeRepeating("RanTarget", 2.0f, 0.5f);
-//			    }
+
 
 	    }
 
     //generate equimultiple random target dot
     void RanTarget(){
-	print ("run RanTarget");
+
+	print ("run RanTarget" + k+TskNum);
 	        //generate random arry
 	        if (!RanCount) {
 		            arr = new int[trials];
@@ -124,55 +146,58 @@ public class RanTargetSphere : MonoBehaviour {
 		                
 		            RanCount = true;
 		        }
-	        if (k >= 14) {
-		            k = 0;
-		            RanCount = false;
-		            print("finish the first round");
-		        }
 
+			if (k >= trials) {
+				k = 0;
+				TskNum = 0;
+				RanCount = false;
+				Scene_Ins.SetActive (true);
+				Scene_Cond_1.SetActive (false);
+				scene_cond_1 = false;
+				print("finish the first round----and return to the instruction page-------");
+			}
 	        //show random target
-	        if (RanCount) {
-//			            print(k);
-		            TrialNum = arr [k];
-//			            print (TrialNum);
-		        }
+			if (RanCount) {
+
+				TrialNum = arr [k];
 
 
-	        if (TrialNum >= 1 && TrialNum <= 2) {
-		            k++;
+				if (TrialNum >= 1 && TrialNum <= trials / 7) {
+					k++;
 					TskNum++;
-		            DotPosition_1 ();
-		        }
-	        if (TrialNum >= 3 && TrialNum <= 4) {
-		            k++;
+					DotPosition_1 ();
+				}
+				if (TrialNum >= trials / 7 + 1 && TrialNum <= trials / 7 * 2) {
+					k++;
 					TskNum++;
-		            DotPosition_2 ();
-		        }
-	        if (TrialNum >= 5 && TrialNum <= 6) {
-		            k++;
+					DotPosition_2 ();
+				}
+				if (TrialNum >= trials / 7 * 2 + 1 && TrialNum <= trials / 7 * 3) {
+					k++;
 					TskNum++;
-		            DotPosition_3 ();
-		        }
-	        if (TrialNum >= 7 && TrialNum <= 8) {
-		            k++;
+					DotPosition_3 ();
+				}
+				if (TrialNum >= trials / 7 * 3 + 1 && TrialNum <= trials / 7 * 4) {
+					k++;
 					TskNum++;
-		            DotPosition_4 ();
-		        }
-	        if (TrialNum >= 9 && TrialNum <= 10) {
-		            k++;
+					DotPosition_4 ();
+				}
+				if (TrialNum >= trials / 7 * 4 + 1 && TrialNum <= trials / 7 * 5) {
+					k++;
 					TskNum++;
-		            DotPosition_5 ();
-		        }
-	        if (TrialNum >= 11 && TrialNum <= 12) {
-		            k++;
+					DotPosition_5 ();
+				}
+				if (TrialNum >= trials / 7 * 5 + 1 && TrialNum <= trials / 7 * 6) {
+					k++;
 					TskNum++;	
-		            DotPosition_6 ();
-		        }
-	        if (TrialNum >= 13 && TrialNum <= 14) {
-		            k++;
+					DotPosition_6 ();
+				}
+				if (TrialNum >= trials / 7 * 6 + 1 && TrialNum <= trials) {
+					k++;
 					TskNum++;
-		            DotPosition_7 ();
-		        }
+					DotPosition_7 ();
+				}
+			}
 
 
 

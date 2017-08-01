@@ -38,7 +38,7 @@ public class XmlDataCollection : MonoBehaviour {
 			            xml.Save(path);
 			        }
 	}
-	void CreateXML_4()
+	void CreateXML_C1()
 	    {
 				string path = Application.dataPath + "/UnityDataCollection.xml";
 		        if (File.Exists(path))
