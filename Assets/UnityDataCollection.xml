@@ -115,4 +115,109 @@
       <RT>0.284764</RT>
     </Task>
   </block>
+  <block condition="1">
+    <Task Task="0">
+      <offset>-1</offset>
+      <Answer>nonright</Answer>
+      <RT>0</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="1">
+      <offset>-1</offset>
+      <Answer>right</Answer>
+      <RT>1.123984</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="2">
+      <offset>3</offset>
+      <Answer>right</Answer>
+      <RT>0.684216</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="3">
+      <offset>-3</offset>
+      <Answer>right</Answer>
+      <RT>0.369258</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="4">
+      <offset>3</offset>
+      <Answer>right</Answer>
+      <RT>0.331248</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="5">
+      <offset>1</offset>
+      <Answer>right</Answer>
+      <RT>0.281116</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="6">
+      <offset>1</offset>
+      <Answer>right</Answer>
+      <RT>0.335542</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="7">
+      <offset>-1</offset>
+      <Answer>right</Answer>
+      <RT>0.31596</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="8">
+      <offset>-3</offset>
+      <Answer>right</Answer>
+      <RT>0.217701</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="9">
+      <offset>-2</offset>
+      <Answer>right</Answer>
+      <RT>0.385626</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="10">
+      <offset>2</offset>
+      <Answer>right</Answer>
+      <RT>0.313265</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="11">
+      <offset>2</offset>
+      <Answer>right</Answer>
+      <RT>0.521333</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="12">
+      <offset>0</offset>
+      <Answer>right</Answer>
+      <RT>0.784031</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="13">
+      <offset>0</offset>
+      <Answer>right</Answer>
+      <RT>1.187246</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="14">
+      <offset>-2</offset>
+      <Answer>right</Answer>
+      <RT>1.103517</RT>
+    </Task>
+  </block>
 </objects>

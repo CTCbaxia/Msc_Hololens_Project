@@ -50,21 +50,22 @@ public class RanTargetSphere : MonoBehaviour {
 			//Press S to start the practice trials
 	        if(Input.GetKeyDown(KeyCode.S)){
 					Scene_Ins.SetActive (false);
-					Scene_Cond_1.SetActive (false);
+//					Scene_Cond_1.SetActive (false);
 					trials = 7;
+					RanCount = false;
 					scene_practice = true;
 					press_button = true;
 					print(" ------welcome to the practice section ");
-
+				
 		    }
 
 
 			//press D to start condition1
 			if (Input.GetKeyDown (KeyCode.D)) {
 					Scene_Ins.SetActive (false);
-					Scene_Cond_1.SetActive (false);
+//					Scene_Cond_1.SetActive (false);
 					trials = 14;
-
+					RanCount = false;
 					scene_practice = false;
 					press_button = true;
 			print(" ------welcome to  condition 1 "+DotNum+"and"+ObjAsw);
@@ -146,7 +147,7 @@ public class RanTargetSphere : MonoBehaviour {
 		                
 		            RanCount = true;
 		        }
-
+			//if all trials has been shown, quit condition 1, reshow instruction
 			if (k >= trials) {
 				k = 0;
 				TskNum = 0;
@@ -156,9 +157,10 @@ public class RanTargetSphere : MonoBehaviour {
 				scene_cond_1 = false;
 				print("finish the first round----and return to the instruction page-------");
 			}
+
 	        //show random target
 			if (RanCount) {
-
+	
 				TrialNum = arr [k];
 
 
@@ -197,6 +199,8 @@ public class RanTargetSphere : MonoBehaviour {
 					TskNum++;
 					DotPosition_7 ();
 				}
+
+
 			}
 
 
