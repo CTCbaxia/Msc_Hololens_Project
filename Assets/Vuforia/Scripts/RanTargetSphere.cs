@@ -13,6 +13,8 @@ public class RanTargetSphere : MonoBehaviour {
 	public static string ObjAsw;
 	public static int TskNum = 0;
 	public static float time_cond_1 = 0;
+//	public static bool Holo_test;
+
 
 	private bool press_button;
 	private float time_rest = 0;
@@ -47,10 +49,12 @@ public class RanTargetSphere : MonoBehaviour {
 					print(" ------welcome to the instruction ");
 
 			}
+
+
 			//Press S to start the practice trials
 	        if(Input.GetKeyDown(KeyCode.S)){
 					Scene_Ins.SetActive (false);
-//					Scene_Cond_1.SetActive (false);
+
 					trials = 7;
 					RanCount = false;
 					scene_practice = true;
@@ -58,12 +62,12 @@ public class RanTargetSphere : MonoBehaviour {
 					print(" ------welcome to the practice section ");
 				
 		    }
-
+			
 
 			//press D to start condition1
 			if (Input.GetKeyDown (KeyCode.D)) {
 					Scene_Ins.SetActive (false);
-//					Scene_Cond_1.SetActive (false);
+
 					trials = 14;
 					RanCount = false;
 					scene_practice = false;

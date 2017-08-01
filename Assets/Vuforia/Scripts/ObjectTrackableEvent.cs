@@ -52,12 +52,17 @@ namespace Vuforia
 			            TargetSphereLocation.transform.position = transform.position;
 			            TargetSphereLocation.transform.rotation = transform.rotation;
 			            print(transform.position);
-
+						
 			            Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
-			        }
+
+						
+
+
+				}
 
 		        private void OnTrackingLost()
 		        {
+					
 			        }
 		    }
 } 
