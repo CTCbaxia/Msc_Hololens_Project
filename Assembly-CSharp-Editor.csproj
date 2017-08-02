@@ -58,7 +58,6 @@
      <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
      <None Include="Assets\Vuforia\Shaders\RenderVideoBackground.shader" />
      <None Include="Assets\readme_SDK.txt" />
-     <None Include="Assets\StreamingAssets\Vuforia\Sticker.xml" />
      <None Include="Assets\Editor\Vuforia\CylinderTargetTextures\Sticker\authoringinfo.xml" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
      <None Include="Assets\StreamingAssets\QCAR\StonesAndChips.xml" />
@@ -68,6 +67,7 @@
      <None Include="Assets\UnityDataCollection.xml" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
+     <None Include="Assets\StreamingAssets\Vuforia\Sticker.xml" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
  <Reference Include="Assembly-UnityScript-Editor-firstpass">
  <HintPath>/Users/CTC/Documents/UCL-2nd_year/MscProject/Programe/Msc_Hololens_Project/Library/ScriptAssemblies/Assembly-UnityScript-Editor-firstpass.dll</HintPath>
