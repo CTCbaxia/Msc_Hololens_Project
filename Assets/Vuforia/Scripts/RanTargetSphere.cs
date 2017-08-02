@@ -80,11 +80,13 @@ public class RanTargetSphere : MonoBehaviour {
 					Scene_Ins.SetActive (false);
 					Scene_Cond_2.SetActive (false);
 
+					scene_practice = false;
+					scene_cond_1 = true;
+					scene_cond_2 = false;
+
 					trials = 14;
 					RanCount = false;
-					scene_practice = false;
 					press_button = true;
-					scene_cond_1 = true;
 					print(" ------welcome to  condition 1 ");
 
 			}
@@ -94,11 +96,7 @@ public class RanTargetSphere : MonoBehaviour {
 				if(press_button || time_cond_1 > 4){
 					press_button = false;
 					count_time = false; //quit the trial
-
-					if(!scene_practice){
-						//						ObjAsw = " ";为什么在这里赋值都没用？？？
-						GameObject.Find("XmlData").SendMessage("CreateXML_C1");
-					}
+					GameObject.Find("XmlData").SendMessage("CreateXML_C1");
 
 					//initialize for every trial
 					time_rest = 0;
@@ -138,15 +136,17 @@ public class RanTargetSphere : MonoBehaviour {
 
 			//press F to start condition2=======================================
 			if (Input.GetKeyDown (KeyCode.F)) {
-				Scene_Ins.SetActive (false);
-				Scene_Cond_1.SetActive (false);
+					Scene_Ins.SetActive (false);
+					Scene_Cond_1.SetActive (false);
+					
+					scene_practice = false;
+					scene_cond_1 = false;
+					scene_cond_2 = true;
 
-				trials = 14;
-				RanCount = false;
-				scene_practice = false;
-				press_button = true;
-				print(" ------welcome to  condition 2 ");
-
+					trials = 14;
+					RanCount = false;
+					press_button = true;
+					print(" ------welcome to  condition 2 ");
 
 			}
 
@@ -156,7 +156,7 @@ public class RanTargetSphere : MonoBehaviour {
     //generate equimultiple random target dot
     void RanTarget(){
 
-	print ("run RanTarget" + k+TskNum);
+		print ("run RanTarget" + "k:"+k+"   TskNum:"+TskNum);
 	        //generate random arry
 	        if (!RanCount) {
 		            arr = new int[trials];
