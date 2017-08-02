@@ -1,130 +1,109 @@
 <objects>
   <block condition="1">
-    <Task Task="2">
-      <offset>3</offset>
+    <Task Task="0">
+      <offset>
+      </offset>
       <Answer>
       </Answer>
       <RT>0</RT>
-    </Task>
-  </block>
-  <block condition="1">
-    <Task Task="3">
-      <offset>-1</offset>
-      <Answer>
-      </Answer>
-      <RT>4.016524</RT>
     </Task>
   </block>
   <block condition="1">
     <Task Task="1">
-      <offset>-1</offset>
-      <Answer>
-      </Answer>
-      <RT>2.753587</RT>
-    </Task>
-  </block>
-  <block condition="1">
-    <Task Task="2">
-      <offset>-3</offset>
-      <Answer>
-      </Answer>
-      <RT>0</RT>
-    </Task>
-  </block>
-  <block condition="1">
-    <Task Task="2">
-      <offset>-3</offset>
-      <Answer>
-      </Answer>
-      <RT>4.00095</RT>
-    </Task>
-  </block>
-  <block condition="1">
-    <Task Task="2">
-      <offset>-3</offset>
-      <Answer>
-      </Answer>
-      <RT>3.967829</RT>
-    </Task>
-  </block>
-  <block condition="1">
-    <Task Task="3">
-      <offset>1</offset>
-      <Answer>
-      </Answer>
-      <RT>4.017306</RT>
-    </Task>
-  </block>
-  <block condition="1">
-    <Task Task="3">
-      <offset>1</offset>
-      <Answer>
-      </Answer>
-      <RT>4.020715</RT>
-    </Task>
-  </block>
-  <block condition="1">
-    <Task Task="3">
-      <offset>1</offset>
-      <Answer>
-      </Answer>
-      <RT>4.016712</RT>
-    </Task>
-  </block>
-  <block condition="1">
-    <Task Task="0">
       <offset>0</offset>
       <Answer>nonright</Answer>
-      <RT>0</RT>
-    </Task>
-  </block>
-  <block condition="1">
-    <Task Task="1">
-      <offset>-2</offset>
-      <Answer>nonright</Answer>
-      <RT>1.532862</RT>
+      <RT>3.951643</RT>
     </Task>
   </block>
   <block condition="1">
     <Task Task="2">
       <offset>-3</offset>
-      <Answer>nonright</Answer>
-      <RT>0.303459</RT>
+      <Answer>right</Answer>
+      <RT>1.872445</RT>
     </Task>
   </block>
   <block condition="1">
     <Task Task="3">
       <offset>-1</offset>
-      <Answer>nonright</Answer>
-      <RT>0.251604</RT>
+      <Answer>right</Answer>
+      <RT>0.736209</RT>
     </Task>
   </block>
   <block condition="1">
     <Task Task="4">
-      <offset>3</offset>
+      <offset>-3</offset>
       <Answer>right</Answer>
-      <RT>0.332221</RT>
+      <RT>1.500946</RT>
     </Task>
   </block>
   <block condition="1">
     <Task Task="5">
-      <offset>-3</offset>
+      <offset>3</offset>
       <Answer>nonright</Answer>
-      <RT>0.199658</RT>
+      <RT>0.548063</RT>
     </Task>
   </block>
   <block condition="1">
     <Task Task="6">
       <offset>1</offset>
-      <Answer>right</Answer>
-      <RT>0.138103</RT>
+      <Answer>nonright</Answer>
+      <RT>1.718547</RT>
     </Task>
   </block>
   <block condition="1">
     <Task Task="7">
+      <offset>2</offset>
+      <Answer>right</Answer>
+      <RT>0.302789</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="8">
+      <offset>2</offset>
+      <Answer>nonright</Answer>
+      <RT>0.286158</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="9">
+      <offset>-2</offset>
+      <Answer>right</Answer>
+      <RT>0.207006</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="10">
       <offset>0</offset>
       <Answer>nonright</Answer>
-      <RT>0.335695</RT>
+      <RT>0.088287</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="11">
+      <offset>3</offset>
+      <Answer>right</Answer>
+      <RT>0.349596</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="12">
+      <offset>1</offset>
+      <Answer>nonright</Answer>
+      <RT>0.183244</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="13">
+      <offset>-2</offset>
+      <Answer>right</Answer>
+      <RT>0.235448</RT>
+    </Task>
+  </block>
+  <block condition="1">
+    <Task Task="14">
+      <offset>-1</offset>
+      <Answer> </Answer>
+      <RT>4.017283</RT>
     </Task>
   </block>
 </objects>

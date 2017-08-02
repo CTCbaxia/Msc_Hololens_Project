@@ -9,20 +9,26 @@ public class RanTargetSphere : MonoBehaviour {
     public int trials = 14;//the number of all trial in one condition
 	public GameObject Scene_Ins;
 	public GameObject Scene_Cond_1;
+	public GameObject Scene_Cond_2;
 
-	public static string DotNum;
+	public static string DotNum;//condition1
+	public static string RingNum;//condition2
+	public static float time_cond_1 = 0;
+	public static float time_cond_2 = 0;
 	public static string ObjAsw;
 	public static int TskNum = 0;
-	public static float time_cond_1 = 0;
+
 
 	public AudioSource Beep_Sound;
 
 
 	private bool press_button;
 	private float time_rest = 0;
-//	private bool scene_ins;
+
 	private bool scene_rest;
+	private bool count_time;
 	private bool scene_cond_1;
+	private bool scene_cond_2;
 	private bool scene_practice;
     bool RanCount = false;
     int[] arr;
@@ -49,14 +55,16 @@ public class RanTargetSphere : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.A)) {
 					Scene_Ins.SetActive (true);
 					Scene_Cond_1.SetActive (false);
+					Scene_Cond_2.SetActive (false);
 					print(" ------welcome to the instruction ");
 
 			}
 
 
-			//Press S to start the practice trials
+			//Press S to start the practice ===================================
 	        if(Input.GetKeyDown(KeyCode.S)){
 					Scene_Ins.SetActive (false);
+					// TBD - discriminate condition 1/2/3
 
 					trials = 7;
 					RanCount = false;
@@ -67,67 +75,80 @@ public class RanTargetSphere : MonoBehaviour {
 		    }
 			
 
-			//press D to start condition1
+			//press D to start condition1=======================================
 			if (Input.GetKeyDown (KeyCode.D)) {
 					Scene_Ins.SetActive (false);
+					Scene_Cond_2.SetActive (false);
 
 					trials = 14;
 					RanCount = false;
 					scene_practice = false;
 					press_button = true;
-			print(" ------welcome to  condition 1 "+DotNum+"and"+ObjAsw);
-					
-					
+					scene_cond_1 = true;
+					print(" ------welcome to  condition 1 ");
+
 			}
 
-			//start the trial
-			if(press_button || time_cond_1 > 4){
+			//start all trials
+			if(scene_cond_1){
+				if(press_button || time_cond_1 > 4){
 					press_button = false;
-					scene_cond_1 = false; //quit the trial
-					Scene_Cond_1.SetActive (false);
+					count_time = false; //quit the trial
 
 					if(!scene_practice){
-//						ObjAsw = " ";为什么在这里赋值都没用？？？
+						//						ObjAsw = " ";为什么在这里赋值都没用？？？
 						GameObject.Find("XmlData").SendMessage("CreateXML_C1");
 					}
 
-					print("time_cond_1:  "+time_cond_1);//get the time for the trial
-					
 					//initialize for every trial
 					time_rest = 0;
 					time_cond_1 = 0; 
-
-					scene_cond_1 = true;
+					count_time = true;
 
 					RanTarget ();	
 
-		    }
-
-
-			//have a rest for 1 second
-			if(scene_cond_1 && time_rest <=1 ){
-				time_rest += Time.deltaTime;
-			}
-
-			//count time for every trial
-			if(scene_cond_1 && time_cond_1<= 4 && time_rest >1){
-				Scene_Cond_1.SetActive (true);
-				time_cond_1 += Time.deltaTime;
-				ObjAsw = " ";//为什么在这里赋值就有用
-
-				//if the observer gives the answer
-				if(Input.GetKeyDown(KeyCode.J) ){
-					press_button = true;
-					ObjAsw = "nonright";//change to 0
-				}
-				if(Input.GetKeyDown(KeyCode.K) ){
-					press_button = true;
-					ObjAsw = "right";//change to 1
 				}
 
+
+				//have a rest for 1 second
+				if(count_time && time_rest <=1 ){
+					Scene_Cond_1.SetActive (false);
+					time_rest += Time.deltaTime;
+				}
+
+				//count time for every trial
+				if(count_time && time_cond_1<= 4 && time_rest >1){
+					Scene_Cond_1.SetActive (true);
+					time_cond_1 += Time.deltaTime;
+					ObjAsw = " ";//为什么在这里赋值就有用
+
+					//if the observer gives the answer
+					if(Input.GetKeyDown(KeyCode.J) ){
+						press_button = true;
+						ObjAsw = "nonright";//change to 0
+					}
+					if(Input.GetKeyDown(KeyCode.K) ){
+						press_button = true;
+						ObjAsw = "right";//change to 1
+					}
+
+				}
 			}
+			
+
+			//press F to start condition2=======================================
+			if (Input.GetKeyDown (KeyCode.F)) {
+				Scene_Ins.SetActive (false);
+				Scene_Cond_1.SetActive (false);
+
+				trials = 14;
+				RanCount = false;
+				scene_practice = false;
+				press_button = true;
+				print(" ------welcome to  condition 2 ");
 
 
+			}
 
 
 	    }
@@ -162,7 +183,8 @@ public class RanTargetSphere : MonoBehaviour {
 				RanCount = false;
 				Scene_Ins.SetActive (true);
 				Scene_Cond_1.SetActive (false);
-				scene_cond_1 = false;
+				count_time = false;
+			scene_cond_1 = false;
 				print("finish the first round----and return to the instruction page-------");
 			}
 
@@ -176,36 +198,43 @@ public class RanTargetSphere : MonoBehaviour {
 					k++;
 					TskNum++;
 					DotPosition_1 ();
+					RingPosition_1 ();
 				}
 				if (TrialNum >= trials / 7 + 1 && TrialNum <= trials / 7 * 2) {
 					k++;
 					TskNum++;
 					DotPosition_2 ();
+					RingPosition_2 ();
 				}
 				if (TrialNum >= trials / 7 * 2 + 1 && TrialNum <= trials / 7 * 3) {
 					k++;
 					TskNum++;
 					DotPosition_3 ();
+					RingPosition_3 ();
 				}
 				if (TrialNum >= trials / 7 * 3 + 1 && TrialNum <= trials / 7 * 4) {
 					k++;
 					TskNum++;
 					DotPosition_4 ();
+					RingPosition_4 ();
 				}
 				if (TrialNum >= trials / 7 * 4 + 1 && TrialNum <= trials / 7 * 5) {
 					k++;
 					TskNum++;
 					DotPosition_5 ();
+					RingPosition_5 ();
 				}
 				if (TrialNum >= trials / 7 * 5 + 1 && TrialNum <= trials / 7 * 6) {
 					k++;
 					TskNum++;	
 					DotPosition_6 ();
+					RingPosition_6 ();
 				}
 				if (TrialNum >= trials / 7 * 6 + 1 && TrialNum <= trials) {
 					k++;
 					TskNum++;
 					DotPosition_7 ();
+					RingPosition_7 ();
 				}
 
 
@@ -295,4 +324,78 @@ public class RanTargetSphere : MonoBehaviour {
 	        Dot6.SetActive (false);
 	        Dot7.SetActive (true);
 	    }
+
+
+
+	//show corresponding ring position
+	void RingPosition_1(){
+			RingNum = "-3";
+			Ring1.SetActive (true);
+			Ring2.SetActive (false);
+			Ring3.SetActive (false);
+			Ring4.SetActive (false);
+			Ring5.SetActive (false);
+			Ring6.SetActive (false);
+			Ring7.SetActive (false);
+	}
+	void RingPosition_2(){
+			RingNum = "-2";
+			Ring1.SetActive (false);
+			Ring2.SetActive (true);
+			Ring3.SetActive (false);
+			Ring4.SetActive (false);
+			Ring5.SetActive (false);
+			Ring6.SetActive (false);
+			Ring7.SetActive (false);
+	}
+	void RingPosition_3(){
+			RingNum = "-1";
+			Ring1.SetActive (false);
+			Ring2.SetActive (false);
+			Ring3.SetActive (true);
+			Ring4.SetActive (false);
+			Ring5.SetActive (false);
+			Ring6.SetActive (false);
+			Ring7.SetActive (false);
+	}
+	void RingPosition_4(){
+			RingNum = "0";
+			Ring1.SetActive (false);
+			Ring2.SetActive (false);
+			Ring3.SetActive (false);
+			Ring4.SetActive (true);
+			Ring5.SetActive (false);
+			Ring6.SetActive (false);
+			Ring7.SetActive (false);
+	}
+	void RingPosition_5(){
+			RingNum = "1";
+			Ring1.SetActive (false);
+			Ring2.SetActive (false);
+			Ring3.SetActive (false);
+			Ring4.SetActive (false);
+			Ring5.SetActive (true);
+			Ring6.SetActive (false);
+			Ring7.SetActive (false);
+	}
+	void RingPosition_6(){
+			RingNum = "2";
+			Ring1.SetActive (false);
+			Ring2.SetActive (false);
+			Ring3.SetActive (false);
+			Ring4.SetActive (false);
+			Ring5.SetActive (false);
+			Ring6.SetActive (true);
+			Ring7.SetActive (false);
+	}
+	void RingPosition_7(){
+			RingNum = "3";
+			Ring1.SetActive (false);
+			Ring2.SetActive (false);
+			Ring3.SetActive (false);
+			Ring4.SetActive (false);
+			Ring5.SetActive (false);
+			Ring6.SetActive (false);
+			Ring7.SetActive (true);
+	}
 }
