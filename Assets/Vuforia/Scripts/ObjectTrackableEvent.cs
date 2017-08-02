@@ -51,9 +51,9 @@ namespace Vuforia
 
 			            TargetSphereLocation.transform.position = transform.position;
 			            TargetSphereLocation.transform.rotation = transform.rotation;
-			            print(transform.position);
+			            print("print position"+transform.position);
 						
-			            Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+			            Debug.Log("2------Trackable " + mTrackableBehaviour.TrackableName + " found");
 
 						
 
