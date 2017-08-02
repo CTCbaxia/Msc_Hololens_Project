@@ -14,6 +14,7 @@ public class RanTargetSphere : MonoBehaviour {
 	public static int TskNum = 0;
 	public static float time_cond_1 = 0;
 //	public static bool Holo_test;
+	public AudioSource Beep_Sound;
 
 
 	private bool press_button;
@@ -38,6 +39,7 @@ public class RanTargetSphere : MonoBehaviour {
     void Start () {
 		Scene_Cond_1.SetActive (false);
 		Scene_Ins.SetActive (false);
+
 	    }
     
     // Update is called once per frame
@@ -95,6 +97,7 @@ public class RanTargetSphere : MonoBehaviour {
 					time_cond_1 = 0; 
 
 					scene_cond_1 = true;
+
 					RanTarget ();	
 
 		    }
@@ -166,7 +169,7 @@ public class RanTargetSphere : MonoBehaviour {
 			if (RanCount) {
 	
 				TrialNum = arr [k];
-
+				Beep_Sound.Play ();
 
 				if (TrialNum >= 1 && TrialNum <= trials / 7) {
 					k++;
@@ -210,6 +213,12 @@ public class RanTargetSphere : MonoBehaviour {
 
 
 	    }
+
+	void Beep(){
+		print ("sound!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		Beep_Sound.Play ();
+		print ("sound~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	}
 
     //show corresponding Dot 
     void DotPosition_1(){
