@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="Tar_Stone" size="0.297000 0.209881" />
+    <ImageTarget name="Target_Stone" size="0.250000 0.176668" />
   </Tracking>
 </QCARConfig>

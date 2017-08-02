@@ -5,15 +5,16 @@ using UnityEngine;
 public class RanTargetSphere : MonoBehaviour {
 
     public GameObject Dot1, Dot2, Dot3, Dot4, Dot5, Dot6, Dot7;
+	public GameObject Ring1, Ring2, Ring3, Ring4, Ring5, Ring6, Ring7;
     public int trials = 14;//the number of all trial in one condition
 	public GameObject Scene_Ins;
 	public GameObject Scene_Cond_1;
-//	public GameObject Scene_Rest;
+
 	public static string DotNum;
 	public static string ObjAsw;
 	public static int TskNum = 0;
 	public static float time_cond_1 = 0;
-//	public static bool Holo_test;
+
 	public AudioSource Beep_Sound;
 
 
@@ -214,11 +215,7 @@ public class RanTargetSphere : MonoBehaviour {
 
 	    }
 
-	void Beep(){
-		print ("sound!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-		Beep_Sound.Play ();
-		print ("sound~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-	}
+
 
     //show corresponding Dot 
     void DotPosition_1(){
