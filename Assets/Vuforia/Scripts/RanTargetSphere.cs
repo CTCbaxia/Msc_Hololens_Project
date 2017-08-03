@@ -11,10 +11,12 @@ public class RanTargetSphere : MonoBehaviour {
 	public GameObject Scene_Cond_1;
 	public GameObject Scene_Cond_2;
 
+
 	public static string DotNum;//condition1
 	public static string RingNum;//condition2
 	public static float time_cond_1 = 0;
 	public static float time_cond_2 = 0;
+	public static float time_cond_3 = 0;
 	public static string ObsAnw;
 	public static int TskNum = 0;
 
@@ -30,6 +32,7 @@ public class RanTargetSphere : MonoBehaviour {
 	private bool count_time;
 	private bool scene_cond_1;
 	private bool scene_cond_2;
+	private bool scene_cond_3;
 	private bool scene_practice;
 
     bool RanCount = false;
@@ -39,6 +42,7 @@ public class RanTargetSphere : MonoBehaviour {
     int j;
     int k = 0;
     int index;
+	int index_con3;
     int tmp;
     int TrialNum;//the offset for every trial
 
@@ -65,18 +69,18 @@ public class RanTargetSphere : MonoBehaviour {
 			}
 
 
-			//Press S to start the practice ===================================
-	        if(Input.GetKeyDown(KeyCode.S)){
-					Scene_Ins.SetActive (false);
-					// TBD - discriminate condition 1/2/3
-
-					trials = 7;
-					RanCount = false;
-					scene_practice = true;
-					press_button = true;
-					print(" ------welcome to the practice section ");
-				
-		    }
+//			//Press S to start the practice ===================================
+//	        if(Input.GetKeyDown(KeyCode.S)){
+//					Scene_Ins.SetActive (false);
+//					// TBD - discriminate condition 1/2/3
+//
+//					trials = 7;
+//					RanCount = false;
+//					scene_practice = true;
+//					press_button = true;
+//					print(" ------welcome to the practice section ");
+//				
+//		    }
 			
 
 			//press D to start condition1=======================================
@@ -102,7 +106,7 @@ public class RanTargetSphere : MonoBehaviour {
 					press_button = false;
 					count_time = false; //quit the trial
 					GameObject.Find("XmlData").SendMessage("CreateXML_C1");
-
+				print ("scene_cond_1 run ------------------------------"+time_cond_1);
 					//initialize for every trial
 					time_rest = 0;
 					time_cond_1 = 0; 
@@ -180,10 +184,71 @@ public class RanTargetSphere : MonoBehaviour {
 
 				}
 			}
-		//press G to start condition 3=======================================
-		if(Input.GetKeyDown (KeyCode.G)){
-			Scene_Ins.SetActive (false);
-		}
+
+
+			//press G to start condition 3=======================================
+			if(Input.GetKeyDown (KeyCode.G)){
+				Scene_Ins.SetActive (false);
+				scene_practice = false;
+				scene_cond_1 = false;
+				scene_cond_2 = false;
+				scene_cond_3 = true;
+
+				trials = 7;
+				RanCount = false;
+				press_button = true;
+
+				print(" ------welcome to  condition 3 ");
+			}
+			if (scene_cond_3) {
+				if (press_button || time_cond_3 > 4) {
+
+					press_button = false;
+					count_time = false;
+					GameObject.Find("XmlData").SendMessage("CreateXML_C3");//change to C3
+
+					//initialize for every trial
+					time_rest = 0;
+					time_cond_3 = 0; 
+					ring_show  = 0;
+					count_time = true;
+
+					RanTarget ();
+					index_con3 = Random.Range (0,2);//randomly showing dots or rings
+
+				}
+				//have a rest for 1 second
+				if(count_time && time_rest <=1 ){
+
+					Scene_Cond_1.SetActive (false);
+					Scene_Cond_2.SetActive (false);
+
+					time_rest += Time.deltaTime;
+
+				}
+				if (count_time && time_cond_3 <= 4 && time_rest > 1) {
+
+					time_cond_3 += Time.deltaTime;
+
+					ObsAnw = " ";
+					ObseverAsw ();
+					//generate random bool
+					if (index_con3 == 0) {
+						Scene_Cond_1.SetActive (true);
+					} else {
+						ring_show  += Time.deltaTime;
+
+						if (ring_show < 1) {
+							Scene_Cond_2.SetActive (true);
+
+						} else {
+							Scene_Cond_2.SetActive (false);
+						}
+					}
+
+				}
+
+			}
 			
 
 
@@ -208,6 +273,7 @@ public class RanTargetSphere : MonoBehaviour {
     void RanTarget(){
 
 		print ("run RanTarget" + "k:"+k+"   TskNum:"+TskNum);
+
 	        //generate random arry
 	        if (!RanCount) {
 		            arr = new int[trials];
