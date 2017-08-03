@@ -7,9 +7,12 @@ using System.IO;
 public class XmlDataCollection : MonoBehaviour {
 
 	string DotNum;
-	string ObjAsw;
+	string ObsAnw;
 	string TskNum;
 	string time_cond_1;
+
+	string RingNum;
+	string time_cond_2;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,54 +21,88 @@ public class XmlDataCollection : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		DotNum = RanTargetSphere.DotNum ;
-		ObjAsw = RanTargetSphere.ObjAsw ;
+		ObsAnw = RanTargetSphere.ObsAnw ;
 		TskNum = RanTargetSphere.TskNum.ToString() ;
 		time_cond_1 = RanTargetSphere.time_cond_1.ToString ();
+
+		RingNum = RanTargetSphere.RingNum;
+		time_cond_2 = RanTargetSphere.time_cond_2.ToString ();
+
 		CreateXML();
 
 	}
 
 	void CreateXML(){
-		        string path = Application.dataPath + "/UnityDataCollection.xml";
-		        if (!File.Exists(path))
-			        {
-			            
-			            XmlDocument xml = new XmlDocument();
-			            
-			            XmlElement root = xml.CreateElement("objects");
-			            xml.AppendChild(root);
-			            
-			            xml.Save(path);
-			        }
+        string path = Application.dataPath + "/UnityDataCollection.xml";
+        if (!File.Exists(path))
+	        {
+	            
+	            XmlDocument xml = new XmlDocument();
+	            
+	            XmlElement root = xml.CreateElement("objects");
+	            xml.AppendChild(root);
+	            
+	            xml.Save(path);
+	        }
 	}
-	void CreateXML_C1()
-	    {
-				string path = Application.dataPath + "/UnityDataCollection.xml";
-		        if (File.Exists(path))
-			        {
-			            XmlDocument xml = new XmlDocument();
-			            xml.Load(path);
-			            XmlNode root = xml.SelectSingleNode("objects");
-			            XmlElement element = xml.CreateElement("block");
-						element.SetAttribute("condition", "1");
-			            XmlElement elementTask = xml.CreateElement("Task");
-			            elementTask.SetAttribute("Task", TskNum);
-						XmlElement elementChild1 = xml.CreateElement("offset");
-			            	elementChild1.InnerText = DotNum;
-						elementTask.AppendChild(elementChild1);
+	void CreateXML_C1(){
+		
+		string path = Application.dataPath + "/UnityDataCollection.xml";
+        if (File.Exists(path))
+	        {
+	            XmlDocument xml = new XmlDocument();
+	            xml.Load(path);
+	            XmlNode root = xml.SelectSingleNode("objects");
+	            XmlElement element = xml.CreateElement("block");
+				element.SetAttribute("condition", "1");
+	            XmlElement elementTask = xml.CreateElement("Task");
+	            elementTask.SetAttribute("Task", TskNum);
+				XmlElement elementChild1 = xml.CreateElement("offset");
+	            	elementChild1.InnerText = DotNum;
+				elementTask.AppendChild(elementChild1);
 
-						XmlElement elementChild2 = xml.CreateElement("Answer");
-							elementChild2.InnerText = ObjAsw;
-						elementTask.AppendChild(elementChild2);
-						XmlElement elementChild3 = xml.CreateElement("RT");
-							elementChild3.InnerText = time_cond_1;
-						elementTask.AppendChild(elementChild3);
-						
-			            element.AppendChild(elementTask);
-			            root.AppendChild(element);
+				XmlElement elementChild2 = xml.CreateElement("Answer");
+					elementChild2.InnerText = ObsAnw;
+				elementTask.AppendChild(elementChild2);
+				XmlElement elementChild3 = xml.CreateElement("RT");
+					elementChild3.InnerText = time_cond_1;
+				elementTask.AppendChild(elementChild3);
+				
+	            element.AppendChild(elementTask);
+	            root.AppendChild(element);
 
-			            xml.AppendChild(root);
-			            xml.Save(path);
-			        }
+	            xml.AppendChild(root);
+	            xml.Save(path);
+	        }
 		    }
+	void CreateXML_C2(){
+		
+		string path = Application.dataPath + "/UnityDataCollection.xml";
+		if (File.Exists(path))
+		{
+			XmlDocument xml = new XmlDocument();
+			xml.Load(path);
+			XmlNode root = xml.SelectSingleNode("objects");
+			XmlElement element = xml.CreateElement("block");
+			element.SetAttribute("condition", "2");
+			XmlElement elementTask = xml.CreateElement("Task");
+			elementTask.SetAttribute("Task", TskNum);
+			XmlElement elementChild1 = xml.CreateElement("offset");
+			elementChild1.InnerText = RingNum;
+			elementTask.AppendChild(elementChild1);
+
+			XmlElement elementChild2 = xml.CreateElement("Answer");
+			elementChild2.InnerText = ObsAnw;
+			elementTask.AppendChild(elementChild2);
+			XmlElement elementChild3 = xml.CreateElement("RT");
+			elementChild3.InnerText = time_cond_2;
+			elementTask.AppendChild(elementChild3);
+
+			element.AppendChild(elementTask);
+			root.AppendChild(element);
+
+			xml.AppendChild(root);
+			xml.Save(path);
+		}
+	}
 }

@@ -15,7 +15,7 @@ public class RanTargetSphere : MonoBehaviour {
 	public static string RingNum;//condition2
 	public static float time_cond_1 = 0;
 	public static float time_cond_2 = 0;
-	public static string ObjAsw;
+	public static string ObsAnw;
 	public static int TskNum = 0;
 
 
@@ -24,13 +24,16 @@ public class RanTargetSphere : MonoBehaviour {
 
 	private bool press_button;
 	private float time_rest = 0;
+	private float ring_show = 0;
 
 	private bool scene_rest;
 	private bool count_time;
 	private bool scene_cond_1;
 	private bool scene_cond_2;
 	private bool scene_practice;
+
     bool RanCount = false;
+
     int[] arr;
     int i;
     int j;
@@ -44,8 +47,9 @@ public class RanTargetSphere : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		Scene_Cond_1.SetActive (false);
 		Scene_Ins.SetActive (false);
+		Scene_Cond_1.SetActive (false);
+		Scene_Cond_2.SetActive (false);
 
 	    }
     
@@ -84,9 +88,10 @@ public class RanTargetSphere : MonoBehaviour {
 					scene_cond_1 = true;
 					scene_cond_2 = false;
 
-					trials = 14;
+					trials = 7;
 					RanCount = false;
 					press_button = true;
+						
 					print(" ------welcome to  condition 1 ");
 
 			}
@@ -107,7 +112,6 @@ public class RanTargetSphere : MonoBehaviour {
 
 				}
 
-
 				//have a rest for 1 second
 				if(count_time && time_rest <=1 ){
 					Scene_Cond_1.SetActive (false);
@@ -118,17 +122,8 @@ public class RanTargetSphere : MonoBehaviour {
 				if(count_time && time_cond_1<= 4 && time_rest >1){
 					Scene_Cond_1.SetActive (true);
 					time_cond_1 += Time.deltaTime;
-					ObjAsw = " ";//为什么在这里赋值就有用
-
-					//if the observer gives the answer
-					if(Input.GetKeyDown(KeyCode.J) ){
-						press_button = true;
-						ObjAsw = "nonright";//change to 0
-					}
-					if(Input.GetKeyDown(KeyCode.K) ){
-						press_button = true;
-						ObjAsw = "right";//change to 1
-					}
+					ObsAnw = " ";//为什么在这里赋值就有用
+					ObseverAsw ();
 
 				}
 			}
@@ -143,15 +138,71 @@ public class RanTargetSphere : MonoBehaviour {
 					scene_cond_1 = false;
 					scene_cond_2 = true;
 
-					trials = 14;
+					trials = 7;
 					RanCount = false;
 					press_button = true;
+					
 					print(" ------welcome to  condition 2 ");
 
 			}
+			if (scene_cond_2) {
+				if (press_button || time_cond_2 > 4) {
+					press_button = false;
+					count_time = false;
+					GameObject.Find("XmlData").SendMessage("CreateXML_C2");
+
+					//initialize for every trial
+					time_rest = 0;
+					time_cond_2 = 0; 
+					ring_show  = 0;
+					count_time = true;
+
+					RanTarget ();
+				}
+				//have a rest for 1 second
+				if(count_time && time_rest <=1 ){
+					Scene_Cond_2.SetActive (false);
+					time_rest += Time.deltaTime;
+					
+				}
+				if (count_time && time_cond_2 <= 4 && time_rest > 1) {
+					
+					time_cond_2 += Time.deltaTime;
+					ring_show  += Time.deltaTime;
+					ObsAnw = " ";
+					ObseverAsw ();
+					if (ring_show < 1) {
+						Scene_Cond_2.SetActive (true);
+
+					} else {
+						Scene_Cond_2.SetActive (false);
+					}
+
+				}
+			}
+		//press G to start condition 3=======================================
+		if(Input.GetKeyDown (KeyCode.G)){
+			Scene_Ins.SetActive (false);
+		}
+			
 
 
 	    }
+
+
+
+	//if the observer gives the answer
+	void ObseverAsw(){
+		if(Input.GetKeyDown(KeyCode.J) ){
+			press_button = true;
+			ObsAnw = "nonright";//change to 0
+		}
+		if(Input.GetKeyDown(KeyCode.K) ){
+			press_button = true;
+			ObsAnw = "right";//change to 1
+		}
+	}
+
 
     //generate equimultiple random target dot
     void RanTarget(){
@@ -184,7 +235,8 @@ public class RanTargetSphere : MonoBehaviour {
 				Scene_Ins.SetActive (true);
 				Scene_Cond_1.SetActive (false);
 				count_time = false;
-			scene_cond_1 = false;
+				scene_cond_1 = false;
+				scene_cond_2 = false;
 				print("finish the first round----and return to the instruction page-------");
 			}
 
