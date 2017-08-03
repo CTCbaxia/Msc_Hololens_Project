@@ -13,6 +13,9 @@ public class XmlDataCollection : MonoBehaviour {
 
 	string RingNum;
 	string time_cond_2;
+
+	string Con3Num;
+	string time_cond_3;
 	// Use this for initialization
 	void Start () {
 		
@@ -27,6 +30,9 @@ public class XmlDataCollection : MonoBehaviour {
 
 		RingNum = RanTargetSphere.RingNum;
 		time_cond_2 = RanTargetSphere.time_cond_2.ToString ();
+
+		Con3Num = RanTargetSphere.DotNum;
+		time_cond_3 = RanTargetSphere.time_cond_3.ToString ();
 
 		CreateXML();
 
@@ -96,6 +102,36 @@ public class XmlDataCollection : MonoBehaviour {
 			elementTask.AppendChild(elementChild2);
 			XmlElement elementChild3 = xml.CreateElement("RT");
 			elementChild3.InnerText = time_cond_2;
+			elementTask.AppendChild(elementChild3);
+
+			element.AppendChild(elementTask);
+			root.AppendChild(element);
+
+			xml.AppendChild(root);
+			xml.Save(path);
+		}
+	}
+	void CreateXML_C3(){
+
+		string path = Application.dataPath + "/UnityDataCollection.xml";
+		if (File.Exists(path))
+		{
+			XmlDocument xml = new XmlDocument();
+			xml.Load(path);
+			XmlNode root = xml.SelectSingleNode("objects");
+			XmlElement element = xml.CreateElement("block");
+			element.SetAttribute("condition", "3");
+			XmlElement elementTask = xml.CreateElement("Task");
+			elementTask.SetAttribute("Task", TskNum);
+			XmlElement elementChild1 = xml.CreateElement("offset");
+			elementChild1.InnerText = Con3Num;
+			elementTask.AppendChild(elementChild1);
+
+			XmlElement elementChild2 = xml.CreateElement("Answer");
+			elementChild2.InnerText = ObsAnw;
+			elementTask.AppendChild(elementChild2);
+			XmlElement elementChild3 = xml.CreateElement("RT");
+			elementChild3.InnerText = time_cond_3;
 			elementTask.AppendChild(elementChild3);
 
 			element.AppendChild(elementTask);
