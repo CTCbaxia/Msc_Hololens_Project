@@ -4,6 +4,8 @@ using UnityEngine;
 using System.Xml;
 using System.IO;
 
+
+
 public class XmlDataCollection : MonoBehaviour {
 
 	string DotNum;
@@ -52,7 +54,7 @@ public class XmlDataCollection : MonoBehaviour {
 	        }
 	}
 	void CreateXML_C1(){
-		
+
 		string path = Application.dataPath + "/UnityDataCollection.xml";
         if (File.Exists(path))
 	        {

@@ -66,6 +66,7 @@
      <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\GLErrorHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\HideExcessAreaBehaviour.cs" />
+     <Compile Include="Assets\Vuforia\Scripts\HoloDataCollection.cs" />
      <Compile Include="Assets\Vuforia\Scripts\ImageTargetBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\Internal\AndroidUnityPlayer.cs" />
      <Compile Include="Assets\Vuforia\Scripts\Internal\ComponentFactoryStarterBehaviour.cs" />
