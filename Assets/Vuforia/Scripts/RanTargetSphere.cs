@@ -10,6 +10,7 @@ public class RanTargetSphere : MonoBehaviour {
 	public GameObject Scene_Ins;
 	public GameObject Scene_Cond_1;
 	public GameObject Scene_Cond_2;
+	public GameObject Scene_Rest;
 
 
 	public static string DotNum;//condition1
@@ -54,6 +55,7 @@ public class RanTargetSphere : MonoBehaviour {
 		Scene_Ins.SetActive (false);
 		Scene_Cond_1.SetActive (false);
 		Scene_Cond_2.SetActive (false);
+		Scene_Rest.SetActive (false);
 
 	    }
     
@@ -81,12 +83,18 @@ public class RanTargetSphere : MonoBehaviour {
 //					print(" ------welcome to the practice section ");
 //				
 //		    }
-			
+
+			//have a rest when having done half of the trials
+			if (k == 4) {
+				HaveARest ();
+			}
 
 			//press D to start condition1=======================================
 			if (Input.GetKeyDown (KeyCode.D)) {
+					//GameObject.Find("XmlData").SendMessage("CreateCSV_1");
 					Scene_Ins.SetActive (false);
 					Scene_Cond_2.SetActive (false);
+					Scene_Rest.SetActive (false);
 
 					scene_practice = false;
 					scene_cond_1 = true;
@@ -102,17 +110,24 @@ public class RanTargetSphere : MonoBehaviour {
 
 			//start all trials
 			if(scene_cond_1){
+
+
 				if(press_button || time_cond_1 > 4){
 					press_button = false;
 					count_time = false; //quit the trial
 					GameObject.Find("XmlData").SendMessage("CreateXML_C1");
-				print ("scene_cond_1 run ------------------------------"+time_cond_1);
-					//initialize for every trial
-					time_rest = 0;
-					time_cond_1 = 0; 
-					count_time = true;
+//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_1");
 
-					RanTarget ();	
+
+						//initialize for every trial
+						time_rest = 0;
+						time_cond_1 = 0; 
+						count_time = true;
+
+						RanTarget ();	
+
+					
+
 
 				}
 
@@ -269,6 +284,27 @@ public class RanTargetSphere : MonoBehaviour {
 	}
 
 
+	void HaveARest(){
+		if (press_button) {
+			press_button = false;
+			count_time = false; //quit the trial
+
+			Scene_Ins.SetActive (false);
+			Scene_Cond_1.SetActive (false);
+			Scene_Cond_2.SetActive (false);
+			Scene_Rest.SetActive (true);
+			print (" ------Please have a rest ");
+
+		}
+		//continue to trials
+		if(Input.GetKeyDown (KeyCode.P)){
+			press_button = true;
+			Scene_Rest.SetActive (false);
+		}
+
+	}
+
+
     //generate equimultiple random target dot
     void RanTarget(){
 
@@ -293,6 +329,8 @@ public class RanTargetSphere : MonoBehaviour {
 		                
 		            RanCount = true;
 		        }
+
+
 			//if all trials has been shown, quit condition 1, reshow instruction
 			if (k >= trials) {
 				k = 0;
