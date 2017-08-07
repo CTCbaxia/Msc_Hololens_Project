@@ -52,10 +52,11 @@ public class HoloDataCollection : MonoBehaviour
 
 		TskNum = RanTargetSphere.TskNum.ToString();
 
-		TimeCond = RanTargetSphere.TimeCond.ToString ();
+		TimeCond = RanTargetSphere.TimeCond.ToString();
 
 
 		RingNum = RanTargetSphere.RingNum;
+
 		Con3Num = RanTargetSphere.DotNum;
 
 

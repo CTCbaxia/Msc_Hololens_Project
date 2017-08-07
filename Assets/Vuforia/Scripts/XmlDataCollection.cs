@@ -15,7 +15,6 @@ public class XmlDataCollection : MonoBehaviour {
 
 	string RingNum;
 
-	string Con3Num;
 
 	// Use this for initialization
 	void Start () {
@@ -30,7 +29,9 @@ public class XmlDataCollection : MonoBehaviour {
 		TimeCond = RanTargetSphere.TimeCond.ToString ();
 
 		RingNum = RanTargetSphere.RingNum;
+
 		Con3Num = RanTargetSphere.DotNum;
+
 
 		CreateXML();
 

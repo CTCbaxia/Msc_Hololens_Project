@@ -111,7 +111,6 @@ public class RanTargetSphere : MonoBehaviour {
 					GameObject.Find("XmlData").SendMessage("CreateXML_C1");
 //					GameObject.Find("XmlData").SendMessage("DataCollectCSV_1");
 
-
 					NewTrial ();
 
 
@@ -136,6 +135,7 @@ public class RanTargetSphere : MonoBehaviour {
 
 			//press F to start condition2=======================================
 			if (Input.GetKeyDown (KeyCode.F)) {
+//					GameObject.Find("XmlData").SendMessage("CreateCSV_2");
 					Scene_Ins.SetActive (false);
 					Scene_Cond_1.SetActive (false);
 					
@@ -155,14 +155,8 @@ public class RanTargetSphere : MonoBehaviour {
 					press_button = false;
 					count_time = false;
 					GameObject.Find("XmlData").SendMessage("CreateXML_C2");
-
-					//initialize for every trial
-					time_rest = 0;
-					TimeCond = 0; 
-					ring_show  = 0;
-					count_time = true;
-
-					RanTarget ();
+//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_2");
+					NewTrial();
 				}
 				//have a rest for 1 second
 				if(count_time && time_rest <=1 ){
@@ -171,17 +165,10 @@ public class RanTargetSphere : MonoBehaviour {
 					
 				}
 				if (count_time && TimeCond <= 4 && time_rest > 1) {
-					
+					Scene_Cond_2.SetActive (true);
 					TimeCond += Time.deltaTime;
-					ring_show  += Time.deltaTime;
 					ObsAnw = " ";
 					ObseverAsw ();
-					if (ring_show < 1) {
-						Scene_Cond_2.SetActive (true);
-
-					} else {
-						Scene_Cond_2.SetActive (false);
-					}
 
 				}
 			}
@@ -206,21 +193,15 @@ public class RanTargetSphere : MonoBehaviour {
 
 					press_button = false;
 					count_time = false;
-					GameObject.Find("XmlData").SendMessage("CreateXML_C3");//change to C3
+					GameObject.Find("XmlData").SendMessage("CreateXML_C3");
+//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_3");
 
-					//initialize for every trial
-					time_rest = 0;
-					TimeCond = 0; 
-					ring_show  = 0;
-					count_time = true;
-
-					RanTarget ();
+					NewTrial();
 					index_con3 = Random.Range (0,2);//randomly showing dots or rings
 
 				}
 				//have a rest for 1 second
 				if(count_time && time_rest <=1 ){
-
 					Scene_Cond_1.SetActive (false);
 					Scene_Cond_2.SetActive (false);
 
@@ -237,14 +218,8 @@ public class RanTargetSphere : MonoBehaviour {
 					if (index_con3 == 0) {
 						Scene_Cond_1.SetActive (true);
 					} else {
-						ring_show  += Time.deltaTime;
+						Scene_Cond_2.SetActive (true);
 
-						if (ring_show < 1) {
-							Scene_Cond_2.SetActive (true);
-
-						} else {
-							Scene_Cond_2.SetActive (false);
-						}
 					}
 
 				}
