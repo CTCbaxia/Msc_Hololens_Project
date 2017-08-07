@@ -14,7 +14,7 @@ public class XmlDataCollection : MonoBehaviour {
 	string TimeCond;
 
 	string RingNum;
-	string Con3Num;
+
 
 	// Use this for initialization
 	void Start () {

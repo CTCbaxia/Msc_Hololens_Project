@@ -113,6 +113,7 @@ public class RanTargetSphere : MonoBehaviour {
 
 					NewTrial ();
 
+
 				}
 
 				//have a rest for 1 second

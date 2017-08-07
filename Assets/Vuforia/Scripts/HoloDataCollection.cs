@@ -22,6 +22,7 @@ public class HoloDataCollection : MonoBehaviour
 	string TimeCond;
 
 	string RingNum;
+
 	string Con3Num;
 
 	string TskNum_test = "0";
@@ -55,8 +56,6 @@ public class HoloDataCollection : MonoBehaviour
 
 
 		RingNum = RanTargetSphere.RingNum;
-
-
 
 		Con3Num = RanTargetSphere.DotNum;
 
