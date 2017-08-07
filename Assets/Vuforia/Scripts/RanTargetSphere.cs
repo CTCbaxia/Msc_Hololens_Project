@@ -11,25 +11,18 @@ public class RanTargetSphere : MonoBehaviour {
 	public GameObject Scene_Cond_1;
 	public GameObject Scene_Cond_2;
 	public GameObject Scene_Rest;
-
+	public AudioSource Beep_Sound;
 
 	public static string DotNum;//condition1
 	public static string RingNum;//condition2
-	public static float time_cond_1 = 0;
-	public static float time_cond_2 = 0;
-	public static float time_cond_3 = 0;
+	public static float TimeCond = 0;
 	public static string ObsAnw;
 	public static int TskNum = 0;
-
-
-	public AudioSource Beep_Sound;
-
 
 	private bool press_button;
 	private float time_rest = 0;
 	private float ring_show = 0;
 
-	private bool scene_rest;
 	private bool count_time;
 	private bool scene_cond_1;
 	private bool scene_cond_2;
@@ -112,22 +105,13 @@ public class RanTargetSphere : MonoBehaviour {
 			if(scene_cond_1){
 
 
-				if(press_button || time_cond_1 > 4){
+				if(press_button || TimeCond > 4){
 					press_button = false;
 					count_time = false; //quit the trial
 					GameObject.Find("XmlData").SendMessage("CreateXML_C1");
 //					GameObject.Find("XmlData").SendMessage("DataCollectCSV_1");
 
-
-						//initialize for every trial
-						time_rest = 0;
-						time_cond_1 = 0; 
-						count_time = true;
-
-						RanTarget ();	
-
-					
-
+					NewTrial()
 
 				}
 
@@ -138,9 +122,9 @@ public class RanTargetSphere : MonoBehaviour {
 				}
 
 				//count time for every trial
-				if(count_time && time_cond_1<= 4 && time_rest >1){
+				if(count_time && TimeCond<= 4 && time_rest >1){
 					Scene_Cond_1.SetActive (true);
-					time_cond_1 += Time.deltaTime;
+					TimeCond += Time.deltaTime;
 					ObsAnw = " ";//为什么在这里赋值就有用
 					ObseverAsw ();
 
@@ -165,14 +149,14 @@ public class RanTargetSphere : MonoBehaviour {
 
 			}
 			if (scene_cond_2) {
-				if (press_button || time_cond_2 > 4) {
+				if (press_button || TimeCond > 4) {
 					press_button = false;
 					count_time = false;
 					GameObject.Find("XmlData").SendMessage("CreateXML_C2");
 
 					//initialize for every trial
 					time_rest = 0;
-					time_cond_2 = 0; 
+					TimeCond = 0; 
 					ring_show  = 0;
 					count_time = true;
 
@@ -184,9 +168,9 @@ public class RanTargetSphere : MonoBehaviour {
 					time_rest += Time.deltaTime;
 					
 				}
-				if (count_time && time_cond_2 <= 4 && time_rest > 1) {
+				if (count_time && TimeCond <= 4 && time_rest > 1) {
 					
-					time_cond_2 += Time.deltaTime;
+					TimeCond += Time.deltaTime;
 					ring_show  += Time.deltaTime;
 					ObsAnw = " ";
 					ObseverAsw ();
@@ -216,7 +200,7 @@ public class RanTargetSphere : MonoBehaviour {
 				print(" ------welcome to  condition 3 ");
 			}
 			if (scene_cond_3) {
-				if (press_button || time_cond_3 > 4) {
+				if (press_button || TimeCond > 4) {
 
 					press_button = false;
 					count_time = false;
@@ -224,7 +208,7 @@ public class RanTargetSphere : MonoBehaviour {
 
 					//initialize for every trial
 					time_rest = 0;
-					time_cond_3 = 0; 
+					TimeCond = 0; 
 					ring_show  = 0;
 					count_time = true;
 
@@ -241,9 +225,9 @@ public class RanTargetSphere : MonoBehaviour {
 					time_rest += Time.deltaTime;
 
 				}
-				if (count_time && time_cond_3 <= 4 && time_rest > 1) {
+				if (count_time && TimeCond <= 4 && time_rest > 1) {
 
-					time_cond_3 += Time.deltaTime;
+					TimeCond += Time.deltaTime;
 
 					ObsAnw = " ";
 					ObseverAsw ();
@@ -269,6 +253,15 @@ public class RanTargetSphere : MonoBehaviour {
 
 	    }
 
+
+	//initialize for every trial
+	void NewTrial(){
+		time_rest = 0;
+		TimeCond = 0; 
+		count_time = true;
+
+		RanTarget ();	
+	}
 
 
 	//if the observer gives the answer
