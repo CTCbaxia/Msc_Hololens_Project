@@ -111,7 +111,9 @@ public class RanTargetSphere : MonoBehaviour {
 					GameObject.Find("XmlData").SendMessage("CreateXML_C1");
 //					GameObject.Find("XmlData").SendMessage("DataCollectCSV_1");
 
-					NewTrial()
+
+					NewTrial ();
+
 
 				}
 

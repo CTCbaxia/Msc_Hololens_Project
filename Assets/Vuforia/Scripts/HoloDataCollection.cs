@@ -17,22 +17,13 @@ public class HoloDataCollection : MonoBehaviour
 {
 
 	string DotNum;
-
 	string ObsAnw;
-
 	string TskNum;
-
-	string time_cond_1;
-
+	string TimeCond;
 
 	string RingNum;
 
-	string time_cond_2;
-
-
 	string Con3Num;
-
-	string time_cond_3;
 
 	string TskNum_test = "0";
 	string DotNum_test = "-3";
@@ -61,17 +52,12 @@ public class HoloDataCollection : MonoBehaviour
 
 		TskNum = RanTargetSphere.TskNum.ToString();
 
-		time_cond_1 = RanTargetSphere.time_cond_1.ToString();
+		TimeCond = RanTargetSphere.TimeCond.ToString ();
 
 
 		RingNum = RanTargetSphere.RingNum;
-
-		time_cond_2 = RanTargetSphere.time_cond_2.ToString();
-
-
 		Con3Num = RanTargetSphere.DotNum;
 
-		time_cond_3 = RanTargetSphere.time_cond_3.ToString();
 
 		//create the file?
 
