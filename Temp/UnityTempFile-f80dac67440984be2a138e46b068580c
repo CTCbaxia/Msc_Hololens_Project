@@ -94,7 +94,6 @@
 'Assets/Scripts/VoiceCommands.cs'
 'Assets/Vuforia/Scripts/BackgroundPlaneBehaviour.cs'
 'Assets/Vuforia/Scripts/CloudRecoBehaviour.cs'
-'Assets/Vuforia/Scripts/CreateRing.cs'
 'Assets/Vuforia/Scripts/CylinderTargetBehaviour.cs'
 'Assets/Vuforia/Scripts/DefaultInitializationErrorHandler.cs'
 'Assets/Vuforia/Scripts/DefaultSmartTerrainEventHandler.cs'

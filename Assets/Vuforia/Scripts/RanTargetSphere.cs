@@ -101,6 +101,10 @@ public class RanTargetSphere : MonoBehaviour {
 				if(press_button || TimeCond > 4){
 					press_button = false;
 					count_time = false; 
+					if(!scene_practice && k!=0){
+						GameObject.Find("XmlData").SendMessage("CreateXML_C1");
+						//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_1");
+					}
 					NewTrial ();
 				}
 
@@ -116,7 +120,7 @@ public class RanTargetSphere : MonoBehaviour {
 					TimeCond += Time.deltaTime;
 					ObsAnw = " ";//为什么在这里赋值就有用
 					ObseverAsw ();
-
+					
 				}
 			}
 
@@ -141,6 +145,10 @@ public class RanTargetSphere : MonoBehaviour {
 				if (press_button || TimeCond > 4) {
 					press_button = false;
 					count_time = false;
+					if (k != 0) {
+						GameObject.Find("XmlData").SendMessage("CreateXML_C2");
+						//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_2");
+					}
 
 					NewTrial();
 				}
@@ -178,7 +186,10 @@ public class RanTargetSphere : MonoBehaviour {
 				if (press_button || TimeCond > 4) {
 					press_button = false;
 					count_time = false;
-
+					if (k != 0) {
+						GameObject.Find("XmlData").SendMessage("CreateXML_C3");
+						//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_3");
+					}
 					NewTrial();
 					index_con3 = Random.Range (0,2);
 
@@ -224,26 +235,6 @@ public class RanTargetSphere : MonoBehaviour {
 			press_button = true;
 			ObsAnw = "right";//change to 1
 		}
-
-		if (press_button){
-			
-			if(scene_cond_1){
-				print (ObsAnw+"!!!!!!!!!!!!!!!!!!!!!"+k);
-				print (time_rest+"!!!!!!!!!!!!!!!!!!!!!"+"TskNum:    "+TskNum );
-				GameObject.Find("XmlData").SendMessage("CreateXML_C1");
-				//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_1");					
-			}
-			if(scene_cond_2){
-				GameObject.Find("XmlData").SendMessage("CreateXML_C2");
-				//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_2");
-			}
-			if(scene_cond_3){
-				GameObject.Find("XmlData").SendMessage("CreateXML_C3");
-				//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_3");
-			}
-
-		}
-
 	}
 
 	void HaveARest(){
