@@ -30,7 +30,7 @@ public class XmlDataCollection : MonoBehaviour {
 
 		RingNum = RanTargetSphere.RingNum;
 		Con3Num = RanTargetSphere.DotNum;
-		print (ObsAnw+"-------------------"+"TskNum:    "+TskNum );
+
 
 		CreateXML();
 
