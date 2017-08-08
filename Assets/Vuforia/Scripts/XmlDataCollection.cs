@@ -29,9 +29,8 @@ public class XmlDataCollection : MonoBehaviour {
 		TimeCond = RanTargetSphere.TimeCond.ToString ();
 
 		RingNum = RanTargetSphere.RingNum;
-
 		Con3Num = RanTargetSphere.DotNum;
-
+		print (ObsAnw+"-------------------"+"TskNum:    "+TskNum );
 
 		CreateXML();
 
@@ -51,7 +50,7 @@ public class XmlDataCollection : MonoBehaviour {
 	        }
 	}
 	void CreateXML_C1(){
-
+		print (ObsAnw+"---------CreateXML_C1----------"+"TskNum:    "+TskNum );
 		string path = Application.dataPath + "/UnityDataCollection.xml";
         if (File.Exists(path))
 	        {
