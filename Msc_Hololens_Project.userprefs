@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Vuforia/Scripts/XmlDataCollection.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Vuforia/Scripts/HoloDataCollection.cs">
     <Files>
-      <File FileName="Assets/Vuforia/Scripts/RanTargetSphere.cs" Line="20" Column="30" />
-      <File FileName="Assets/Vuforia/Scripts/XmlDataCollection.cs" Line="134" Column="41" />
+      <File FileName="Assets/Vuforia/Scripts/XmlDataCollection.cs" Line="17" Column="17" />
+      <File FileName="Assets/Vuforia/Scripts/RanTargetSphere.cs" Line="43" Column="1" />
       <File FileName="Assets/Vuforia/Scripts/ObjectTrackableEvent.cs" Line="6" Column="53" />
-      <File FileName="Assets/Vuforia/Scripts/CreateRing.cs" Line="1" Column="1" />
+      <File FileName="Assets/Vuforia/Scripts/HoloDataCollection.cs" Line="48" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

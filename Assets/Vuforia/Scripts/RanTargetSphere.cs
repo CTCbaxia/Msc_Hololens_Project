@@ -41,8 +41,6 @@ public class RanTargetSphere : MonoBehaviour {
     int TrialNum;//the offset for every trial
 
 
-
-
     // Use this for initialization
     void Start () {
 		Scene_Ins.SetActive (false);
@@ -211,7 +209,6 @@ public class RanTargetSphere : MonoBehaviour {
 				if (count_time && TimeCond <= 4 && time_rest > 1) {
 
 					TimeCond += Time.deltaTime;
-
 					ObsAnw = " ";
 					ObseverAsw ();
 					//generate random bool

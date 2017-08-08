@@ -82,7 +82,7 @@ public class HoloDataCollection : MonoBehaviour
 		async () => {
 
 		StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(folderName);
-		StorageFile file = await folder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExisted);//create file
+		StorageFile file = await folder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);//create file
 
 		await FileIO.AppendTextAsync(file, "Condition,Task,Offset,Answer"+"\r\n");
 		await FileIO.AppendTextAsync(file, "1,1,1,1"+"\r\n");
@@ -115,7 +115,7 @@ public class HoloDataCollection : MonoBehaviour
 		StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(folderName);
 		StorageFile file = await folder.GetFileAsync(fileName);//get the file
 
-				await FileIO.AppendTextAsync(file, "1"+","+TskNum_test+","+DotNum_test+","+ ObsAnw_test+","+time_cond_1+","+"\r\n");
+		await FileIO.AppendTextAsync(file, "1"+","+TskNum_test+","+DotNum_test+","+ ObsAnw_test+","+TimeCond+","+"\r\n");
 
 		});
 
