@@ -67,6 +67,7 @@
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\StreamingAssets\Vuforia\Sticker.xml" />
+     <None Include="Assets\UnityDataCollection.xml" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
  <Reference Include="Assembly-UnityScript-Editor-firstpass">
  <HintPath>/Users/CTC/Documents/UCL-2nd_year/MscProject/Programe/Msc_Hololens_Project/Library/ScriptAssemblies/Assembly-UnityScript-Editor-firstpass.dll</HintPath>
