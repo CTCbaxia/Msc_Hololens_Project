@@ -115,7 +115,7 @@ public class HoloDataCollection : MonoBehaviour
 		StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(folderName);
 		StorageFile file = await folder.GetFileAsync(fileName);//get the file
 
-				await FileIO.AppendTextAsync(file, "1"+","+TskNum_test+","+DotNum_test+","+ ObsAnw_test+","+time_cond_1+","+"\r\n");
+		await FileIO.AppendTextAsync(file, "1"+","+TskNum_test+","+DotNum_test+","+ ObsAnw_test+","+TimeCond+","+"\r\n");
 
 		});
 
