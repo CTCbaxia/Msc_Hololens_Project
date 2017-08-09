@@ -8,10 +8,12 @@ using System.IO;
 
 public class XmlDataCollection : MonoBehaviour {
 
+	string Subject = "A";
 	string DotNum;
 	string ObsAnw;
 	string TskNum;
 	string TimeCond;
+	string path;
 
 	string RingNum;
 	string Con3Num;
@@ -32,12 +34,27 @@ public class XmlDataCollection : MonoBehaviour {
 		Con3Num = RanTargetSphere.DotNum;
 
 
-		CreateXML();
+//		CreateXML();
 
+		if (Input.GetKeyDown (KeyCode.A)) {
+			Subject = "A";
+		}
+		if (Input.GetKeyDown (KeyCode.S)) {
+			Subject = "B";
+		}
+
+	}
+	void SelectSub(){
+		if(Subject == "A"){
+			path = Application.dataPath + "/UnityDataCollection_A.xml";
+		}else if(Subject == "B"){
+			path = Application.dataPath + "/UnityDataCollection_B.xml";
+		}
 	}
 
 	void CreateXML(){
-        string path = Application.dataPath + "/UnityDataCollection.xml";
+		
+		SelectSub ();
         if (!File.Exists(path))
 	        {
 	            
@@ -50,8 +67,8 @@ public class XmlDataCollection : MonoBehaviour {
 	        }
 	}
 	void CreateXML_C1(){
-		print (ObsAnw+"---------CreateXML_C1----------"+"TskNum:    "+TskNum );
-		string path = Application.dataPath + "/UnityDataCollection.xml";
+		
+		SelectSub ();
         if (File.Exists(path))
 	        {
 	            XmlDocument xml = new XmlDocument();
@@ -80,8 +97,7 @@ public class XmlDataCollection : MonoBehaviour {
 	        }
 		    }
 	void CreateXML_C2(){
-		
-		string path = Application.dataPath + "/UnityDataCollection.xml";
+		SelectSub ();
 		if (File.Exists(path))
 		{
 			XmlDocument xml = new XmlDocument();
@@ -111,7 +127,7 @@ public class XmlDataCollection : MonoBehaviour {
 	}
 	void CreateXML_C3(){
 
-		string path = Application.dataPath + "/UnityDataCollection.xml";
+		SelectSub ();
 		if (File.Exists(path))
 		{
 			XmlDocument xml = new XmlDocument();

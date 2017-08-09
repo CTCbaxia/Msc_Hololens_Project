@@ -76,9 +76,12 @@ public class RanTargetSphere : MonoBehaviour {
 				HaveARest ();
 			}
 
+
 			//press D to start condition1=======================================
 			if (Input.GetKeyDown (KeyCode.W)) {
+					GameObject.Find("XmlData").SendMessage("CreateXML");
 					//GameObject.Find("XmlData").SendMessage("CreateCSV_1");
+
 					Scene_Ins.SetActive (false);
 					Scene_Cond_2.SetActive (false);
 					Scene_Rest.SetActive (false);

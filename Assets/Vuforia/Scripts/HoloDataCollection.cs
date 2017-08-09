@@ -15,7 +15,8 @@ using System;
 
 public class HoloDataCollection : MonoBehaviour
 {
-
+	string Subject = "A";
+	string fileName;
 	string DotNum;
 	string ObsAnw;
 	string TskNum;
@@ -28,6 +29,7 @@ public class HoloDataCollection : MonoBehaviour
 	string TskNum_test = "0";
 	string DotNum_test = "-3";
 	string ObsAnw_test = "1";
+
 
 
 	// Use this for initialization
@@ -43,39 +45,36 @@ public class HoloDataCollection : MonoBehaviour
 
 	void Update()
 	{
-
-
-
 		DotNum = RanTargetSphere.DotNum;
-
 		ObsAnw = RanTargetSphere.ObsAnw;
-
 		TskNum = RanTargetSphere.TskNum.ToString();
-
 		TimeCond = RanTargetSphere.TimeCond.ToString();
-
-
 		RingNum = RanTargetSphere.RingNum;
-
 		Con3Num = RanTargetSphere.DotNum;
 
-
-		//create the file?
-
-
+		if (Input.GetKeyDown (KeyCode.A)) {
+			Subject = "A";
+		}
+		if (Input.GetKeyDown (KeyCode.S)) {
+			Subject = "B";
+		}
 	}
 
-
-
-
+	void SelectSub(){
+		if(Subject == "A"){
+			fileName =  "Condition_1_A.csv";
+		}else if(Subject == "B"){
+			fileName = 	"Condition_1_B.csv";
+		}
+	}
 	//create the new csv file for one subject per condition
 	void CreateCSV_1()
 	{
-
+		
+		SelectSub ();
 		#if !UNITY_EDITOR && UNITY_METRO
-
 		string folderName = ApplicationData.Current.RoamingFolder.Path;
-		string fileName = "DataCollection_1.csv";
+
 
 		Task task = new Task(
 
@@ -84,7 +83,7 @@ public class HoloDataCollection : MonoBehaviour
 		StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(folderName);
 		StorageFile file = await folder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);//create file
 
-		await FileIO.AppendTextAsync(file, "Condition,Task,Offset,Answer"+"\r\n");
+		await FileIO.AppendTextAsync(file, "Condition,Task,Offset,Answer,RT,HeadRotation"+"\r\n");
 		await FileIO.AppendTextAsync(file, "1,1,1,1"+"\r\n");
 
 		});
@@ -102,11 +101,9 @@ public class HoloDataCollection : MonoBehaviour
 	void DataCollectCSV_1()
 	{
 
-
+		SelectSub ();
 		#if !UNITY_EDITOR && UNITY_METRO
-
 		string folderName = ApplicationData.Current.RoamingFolder.Path;
-		string fileName = "DataCollection_1.csv";
 
 		Task task = new Task(
 
