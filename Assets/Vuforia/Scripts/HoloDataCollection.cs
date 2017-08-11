@@ -16,7 +16,9 @@ using System;
 public class HoloDataCollection : MonoBehaviour
 {
 	string Subject = "A";
-	string fileName;
+	string fileName_1;
+	string fileName_2;
+	string fileName_3;
 	string DotNum;
 	string ObsAnw;
 	string TskNum;
@@ -29,6 +31,7 @@ public class HoloDataCollection : MonoBehaviour
 	string TskNum_test = "0";
 	string DotNum_test = "-3";
 	string ObsAnw_test = "1";
+	string TimeCond_test = "1.25";
 
 
 
@@ -39,10 +42,7 @@ public class HoloDataCollection : MonoBehaviour
 
 	}
 
-
-
 	// Update is called once per frame
-
 	void Update()
 	{
 		DotNum = RanTargetSphere.DotNum;
@@ -62,9 +62,13 @@ public class HoloDataCollection : MonoBehaviour
 
 	void SelectSub(){
 		if(Subject == "A"){
-			fileName =  "Condition_1_A.csv";
+			fileName_1 =  "Condition_1_A.csv";
+			fileName_2 =  "Condition_2_A.csv";
+			fileName_3 =  "Condition_3_A.csv";
 		}else if(Subject == "B"){
-			fileName = 	"Condition_1_B.csv";
+			fileName_1 =  "Condition_1_B.csv";
+			fileName_2 =  "Condition_2_B.csv";
+			fileName_3 =  "Condition_3_B.csv";
 		}
 	}
 	//create the new csv file for one subject per condition
@@ -81,10 +85,9 @@ public class HoloDataCollection : MonoBehaviour
 		async () => {
 
 		StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(folderName);
-		StorageFile file = await folder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);//create file
+		StorageFile file = await folder.CreateFileAsync(fileName_1, CreationCollisionOption.OpenIfExists);//create file
 
 		await FileIO.AppendTextAsync(file, "Condition,Task,Offset,Answer,RT,HeadRotation"+"\r\n");
-		await FileIO.AppendTextAsync(file, "1,1,1,1"+"\r\n");
 
 		});
 
@@ -110,9 +113,9 @@ public class HoloDataCollection : MonoBehaviour
 		async () => {
 
 		StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(folderName);
-		StorageFile file = await folder.GetFileAsync(fileName);//get the file
+		StorageFile file = await folder.GetFileAsync(fileName_1);//get the file
 
-		await FileIO.AppendTextAsync(file, "1"+","+TskNum_test+","+DotNum_test+","+ ObsAnw_test+","+TimeCond+","+"\r\n");
+		await FileIO.AppendTextAsync(file, "1"+","+TskNum_test+","+DotNum_test+","+ ObsAnw_test+","+TimeCond_test+","+"\r\n");
 
 		});
 

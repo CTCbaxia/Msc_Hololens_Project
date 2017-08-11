@@ -53,9 +53,25 @@ public class RanTargetSphere : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
+			//Press Q to show the instruction ===================================
+			if(Input.GetKeyDown(KeyCode.Q)){
+				Scene_Ins.SetActive (true);
+				Scene_Cond_1.SetActive (false);
+				Scene_Cond_2.SetActive (false);
+				Scene_Rest.SetActive (false);
 
-			//Press S to start the practice ===================================
-	        if(Input.GetKeyDown(KeyCode.Q)){
+				scene_practice = false;
+				scene_cond_1 = false;
+				scene_cond_2 = false;
+
+				RanCount = false;
+				press_button = false;
+				time_rest = 2;
+				print(" ------welcome to the instruction ");
+
+			}
+			//Press W to start the practice ===================================
+	        if(Input.GetKeyDown(KeyCode.W)){
 					Scene_Ins.SetActive (false);
 					Scene_Cond_2.SetActive (false);
 					Scene_Rest.SetActive (false);
@@ -75,10 +91,10 @@ public class RanTargetSphere : MonoBehaviour {
 			if (k == 4) {
 				HaveARest ();
 			}
-
-
-			//press D to start condition1=======================================
-			if (Input.GetKeyDown (KeyCode.W)) {
+			
+			//press E to start condition1=======================================
+			if (Input.GetKeyDown (KeyCode.E)) {
+			
 					GameObject.Find("XmlData").SendMessage("CreateXML");
 					//GameObject.Find("XmlData").SendMessage("CreateCSV_1");
 
@@ -94,6 +110,7 @@ public class RanTargetSphere : MonoBehaviour {
 					trials = 7;
 					RanCount = false;
 					press_button = true;
+					time_rest = 2;
 					print(" ------welcome to  condition 1 ");
 
 			}
@@ -101,34 +118,36 @@ public class RanTargetSphere : MonoBehaviour {
 			//start all trials
 			if(scene_cond_1){
 			
-				if(press_button || TimeCond > 4){
+				if(press_button && time_rest >1){
 					press_button = false;
 					count_time = false; 
 					if(!scene_practice && k!=0){
+
 						GameObject.Find("XmlData").SendMessage("CreateXML_C1");
 						//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_1");
 					}
 					NewTrial ();
 				}
 
-				//have a rest for 1 second
-				if(count_time && time_rest <=1 ){
-					Scene_Cond_1.SetActive (false);
-					time_rest += Time.deltaTime;
-				}
 
 				//count time for every trial
-				if(count_time && TimeCond<= 4 && time_rest >1){
+				if(count_time && TimeCond<= 4){
+					
 					Scene_Cond_1.SetActive (true);
-					TimeCond += Time.deltaTime;
-					ObsAnw = " ";//为什么在这里赋值就有用
+					TimeCond += Time.deltaTime;					
 					ObseverAsw ();
 					
 				}
+
+				//have a rest for 1 second
+				if(count_time && press_button && time_rest <=1 ){
+				Scene_Cond_1.SetActive (false);
+					time_rest += Time.deltaTime;
+				}
 			}
 
-			//press F to start condition2=======================================
-			if (Input.GetKeyDown (KeyCode.E)) {
+			//press R to start condition2=======================================
+			if (Input.GetKeyDown (KeyCode.R)) {
 //					GameObject.Find("XmlData").SendMessage("CreateCSV_2");
 					Scene_Ins.SetActive (false);
 					Scene_Cond_1.SetActive (false);
@@ -141,11 +160,12 @@ public class RanTargetSphere : MonoBehaviour {
 					trials = 7;
 					RanCount = false;
 					press_button = true;
+					time_rest = 2;
 					print(" ------welcome to  condition 2 ");
 
 			}
 			if (scene_cond_2) {
-				if (press_button || TimeCond > 4) {
+				if (press_button && time_rest >1) {
 					press_button = false;
 					count_time = false;
 					if (k != 0) {
@@ -155,24 +175,24 @@ public class RanTargetSphere : MonoBehaviour {
 
 					NewTrial();
 				}
+				if (count_time && TimeCond <= 4) {
+					Scene_Cond_2.SetActive (true);
+					TimeCond += Time.deltaTime;
+					ObseverAsw ();
+
+				}
 				//have a rest for 1 second
-				if(count_time && time_rest <=1 ){
+				if(count_time && press_button && time_rest <=1){
 					Scene_Cond_2.SetActive (false);
 					time_rest += Time.deltaTime;
 					
 				}
-				if (count_time && TimeCond <= 4 && time_rest > 1) {
-					Scene_Cond_2.SetActive (true);
-					TimeCond += Time.deltaTime;
-					ObsAnw = " ";
-					ObseverAsw ();
 
-				}
 			}
 
 
-			//press G to start condition 3=======================================
-			if(Input.GetKeyDown (KeyCode.R)){
+			//press T to start condition 3=======================================
+			if(Input.GetKeyDown (KeyCode.T)){
 //					GameObject.Find("XmlData").SendMessage("CreateCSV_3");
 					Scene_Ins.SetActive (false);
 					scene_practice = false;
@@ -183,10 +203,11 @@ public class RanTargetSphere : MonoBehaviour {
 					trials = 7;
 					RanCount = false;
 					press_button = true;
+					time_rest = 2;
 					print(" ------welcome to  condition 3 ");
 			}
 			if (scene_cond_3) {
-				if (press_button || TimeCond > 4) {
+				if (press_button && time_rest > 1) {
 					press_button = false;
 					count_time = false;
 					if (k != 0) {
@@ -197,25 +218,24 @@ public class RanTargetSphere : MonoBehaviour {
 					index_con3 = Random.Range (0,2);
 
 				}
-				//have a rest for 1 second
-				if(count_time && time_rest <=1 ){
-					Scene_Cond_1.SetActive (false);
-					Scene_Cond_2.SetActive (false);
-					time_rest += Time.deltaTime;
 
-				}
-				if (count_time && TimeCond <= 4 && time_rest > 1) {
+				if (count_time && TimeCond <= 4) {
 
 					TimeCond += Time.deltaTime;
-					ObsAnw = " ";
 					ObseverAsw ();
 					//randomly showing dots in con1 or con2
 					if (index_con3 == 0) {
 						Scene_Cond_1.SetActive (true);
 					} else {
 						Scene_Cond_2.SetActive (true);
-
 					}
+				}
+				//have a rest for 1 second
+				if(count_time && press_button && time_rest <=1 ){
+					Scene_Cond_1.SetActive (false);
+					Scene_Cond_2.SetActive (false);
+					time_rest += Time.deltaTime;
+
 				}
 			}
 	    }
@@ -225,6 +245,7 @@ public class RanTargetSphere : MonoBehaviour {
 		time_rest = 0;
 		TimeCond = 0; 
 		count_time = true;
+		ObsAnw = " ";
 		RanTarget ();	
 	}
 		
@@ -254,6 +275,7 @@ public class RanTargetSphere : MonoBehaviour {
 		}
 		//continue to trials
 		if(Input.GetKeyDown (KeyCode.P)){
+			time_rest = 2;
 			press_button = true;
 			Scene_Rest.SetActive (false);
 		}

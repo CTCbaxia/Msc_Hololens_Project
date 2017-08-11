@@ -44,7 +44,7 @@ public class XmlDataCollection : MonoBehaviour {
 		}
 
 	}
-	void SelectSub(){
+	void SelectSubTest(){
 		if(Subject == "A"){
 			path = Application.dataPath + "/UnityDataCollection_A.xml";
 		}else if(Subject == "B"){
@@ -54,7 +54,7 @@ public class XmlDataCollection : MonoBehaviour {
 
 	void CreateXML(){
 		
-		SelectSub ();
+		SelectSubTest ();
         if (!File.Exists(path))
 	        {
 	            
@@ -68,7 +68,7 @@ public class XmlDataCollection : MonoBehaviour {
 	}
 	void CreateXML_C1(){
 		
-		SelectSub ();
+		SelectSubTest ();
         if (File.Exists(path))
 	        {
 	            XmlDocument xml = new XmlDocument();
@@ -97,7 +97,7 @@ public class XmlDataCollection : MonoBehaviour {
 	        }
 		    }
 	void CreateXML_C2(){
-		SelectSub ();
+		SelectSubTest ();
 		if (File.Exists(path))
 		{
 			XmlDocument xml = new XmlDocument();
@@ -127,7 +127,7 @@ public class XmlDataCollection : MonoBehaviour {
 	}
 	void CreateXML_C3(){
 
-		SelectSub ();
+		SelectSubTest ();
 		if (File.Exists(path))
 		{
 			XmlDocument xml = new XmlDocument();
