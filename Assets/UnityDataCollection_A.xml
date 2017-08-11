@@ -3,119 +3,99 @@
     <Task Task="1">
       <offset>-2</offset>
       <Answer>nonright</Answer>
-      <RT>1.202482</RT>
+      <RT>0.653052</RT>
     </Task>
   </block>
   <block condition="1">
     <Task Task="2">
-      <offset>0</offset>
+      <offset>3</offset>
       <Answer>nonright</Answer>
-      <RT>0.648063</RT>
+      <RT>0.637479</RT>
     </Task>
   </block>
   <block condition="1">
     <Task Task="3">
       <offset>-1</offset>
       <Answer>nonright</Answer>
-      <RT>0.366812</RT>
-    </Task>
-  </block>
-  <block condition="1">
-    <Task Task="1">
-      <offset>-2</offset>
-      <Answer>nonright</Answer>
-      <RT>0.721123</RT>
-    </Task>
-  </block>
-  <block condition="1">
-    <Task Task="2">
-      <offset>-3</offset>
-      <Answer>nonright</Answer>
-      <RT>0.417568</RT>
-    </Task>
-  </block>
-  <block condition="1">
-    <Task Task="3">
-      <offset>0</offset>
-      <Answer>nonright</Answer>
-      <RT>0.286645</RT>
+      <RT>0.384835</RT>
     </Task>
   </block>
   <block condition="1">
     <Task Task="4">
-      <offset>2</offset>
+      <offset>0</offset>
       <Answer>nonright</Answer>
-      <RT>0.20301</RT>
+      <RT>0.303511</RT>
     </Task>
   </block>
   <block condition="1">
     <Task Task="5">
-      <offset>3</offset>
+      <offset>-3</offset>
       <Answer>nonright</Answer>
-      <RT>0.335826</RT>
+      <RT>0.487353</RT>
     </Task>
   </block>
   <block condition="1">
     <Task Task="6">
-      <offset>1</offset>
+      <offset>2</offset>
       <Answer>nonright</Answer>
-      <RT>0.351796</RT>
+      <RT>0.233914</RT>
     </Task>
   </block>
   <block condition="1">
     <Task Task="7">
-      <offset>-1</offset>
+      <offset>1</offset>
       <Answer>nonright</Answer>
-      <RT>0.360912</RT>
+      <RT>0.413738</RT>
     </Task>
   </block>
   <block condition="2">
     <Task Task="1">
       <offset>-3</offset>
-      <Answer>right</Answer>
-      <RT>0.852859</RT>
+      <Answer>
+      </Answer>
+      <RT>4.016155</RT>
     </Task>
   </block>
   <block condition="2">
     <Task Task="2">
-      <offset>-1</offset>
-      <Answer>right</Answer>
-      <RT>0.138631</RT>
+      <offset>-2</offset>
+      <Answer>nonright</Answer>
+      <RT>2.152572</RT>
     </Task>
   </block>
   <block condition="2">
     <Task Task="3">
       <offset>0</offset>
       <Answer>right</Answer>
-      <RT>0.176715</RT>
+      <RT>0.450115</RT>
     </Task>
   </block>
   <block condition="2">
     <Task Task="4">
-      <offset>-2</offset>
-      <Answer>right</Answer>
-      <RT>0.299156</RT>
+      <offset>-1</offset>
+      <Answer>nonright</Answer>
+      <RT>0.32184</RT>
     </Task>
   </block>
   <block condition="2">
     <Task Task="5">
       <offset>3</offset>
       <Answer>right</Answer>
-      <RT>0.389346</RT>
+      <RT>0.320024</RT>
     </Task>
   </block>
   <block condition="2">
     <Task Task="6">
       <offset>2</offset>
-      <Answer>right</Answer>
-      <RT>0.204542</RT>
+      <Answer>nonright</Answer>
+      <RT>0.315642</RT>
     </Task>
   </block>
   <block condition="2">
     <Task Task="7">
       <offset>1</offset>
       <Answer>right</Answer>
-      <RT>0.33282</RT>
+      <RT>0.348975</RT>
     </Task>
   </block>
 </objects>
