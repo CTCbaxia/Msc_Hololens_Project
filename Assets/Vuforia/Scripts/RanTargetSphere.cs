@@ -47,6 +47,7 @@ public class RanTargetSphere : MonoBehaviour {
 		Scene_Cond_1.SetActive (false);
 		Scene_Cond_2.SetActive (false);
 		Scene_Rest.SetActive (false);
+
 		print(" ------welcome to the instruction ");
 
 	    }
@@ -94,7 +95,8 @@ public class RanTargetSphere : MonoBehaviour {
 			
 			//press E to start condition1=======================================
 			if (Input.GetKeyDown (KeyCode.E)) {
-			
+//					GameObject.Find ("SubjectB").SetActive (false);
+//					GameObject.Find ("SubjectA").SetActive (false);
 					GameObject.Find("XmlData").SendMessage("CreateXML");
 					//GameObject.Find("XmlData").SendMessage("CreateCSV_1");
 
@@ -140,9 +142,10 @@ public class RanTargetSphere : MonoBehaviour {
 				}
 
 				//have a rest for 1 second
-				if(count_time && press_button && time_rest <=1 ){
+			if(count_time && time_rest <=1 && (press_button || TimeCond >4 ) ){
 				Scene_Cond_1.SetActive (false);
 					time_rest += Time.deltaTime;
+					press_button = true;
 				}
 			}
 
