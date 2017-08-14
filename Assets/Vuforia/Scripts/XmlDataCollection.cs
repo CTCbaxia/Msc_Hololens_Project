@@ -7,7 +7,8 @@ using System.IO;
 
 
 public class XmlDataCollection : MonoBehaviour {
-
+	public GameObject SubjectA;
+	public GameObject SubjectB;
 	string Subject = "A";
 	string DotNum;
 	string ObsAnw;
@@ -20,11 +21,13 @@ public class XmlDataCollection : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		SubjectA.SetActive (false);
+		SubjectB.SetActive (false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
 		DotNum = RanTargetSphere.DotNum ;
 		ObsAnw = RanTargetSphere.ObsAnw ;
 		TskNum = RanTargetSphere.TskNum.ToString() ;
@@ -38,13 +41,16 @@ public class XmlDataCollection : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.A)) {
 			Subject = "A";
+			SubjectA.SetActive (true);
+			print ("set subject A");
 		}
 		if (Input.GetKeyDown (KeyCode.S)) {
 			Subject = "B";
+			SubjectB.SetActive (true);
 		}
 
 	}
-	void SelectSub(){
+	void SelectSubTest(){
 		if(Subject == "A"){
 			path = Application.dataPath + "/UnityDataCollection_A.xml";
 		}else if(Subject == "B"){
@@ -54,7 +60,7 @@ public class XmlDataCollection : MonoBehaviour {
 
 	void CreateXML(){
 		
-		SelectSub ();
+		SelectSubTest ();
         if (!File.Exists(path))
 	        {
 	            
@@ -68,7 +74,7 @@ public class XmlDataCollection : MonoBehaviour {
 	}
 	void CreateXML_C1(){
 		
-		SelectSub ();
+		SelectSubTest ();
         if (File.Exists(path))
 	        {
 	            XmlDocument xml = new XmlDocument();
@@ -97,7 +103,7 @@ public class XmlDataCollection : MonoBehaviour {
 	        }
 		    }
 	void CreateXML_C2(){
-		SelectSub ();
+		SelectSubTest ();
 		if (File.Exists(path))
 		{
 			XmlDocument xml = new XmlDocument();
@@ -127,7 +133,7 @@ public class XmlDataCollection : MonoBehaviour {
 	}
 	void CreateXML_C3(){
 
-		SelectSub ();
+		SelectSubTest ();
 		if (File.Exists(path))
 		{
 			XmlDocument xml = new XmlDocument();
