@@ -12,6 +12,8 @@ public class RanTargetSphere : MonoBehaviour {
 	public GameObject Scene_Cond_2;
 	public GameObject Scene_Rest;
 	public AudioSource Beep_Sound;
+	public GameObject SubjectA;
+	public GameObject SubjectB;
 
 	public static string DotNum;//condition1
 	public static string RingNum;//condition2
@@ -21,25 +23,32 @@ public class RanTargetSphere : MonoBehaviour {
 
 	private bool press_button;
 	private float time_rest = 0;
-	private float ring_show = 0;
+//	private float ring_show = 0;
 
+	public static bool scene_cond_1;
+	public static bool scene_cond_2;
+	public static bool scene_cond_3;
 	private bool count_time;
-	private bool scene_cond_1;
-	private bool scene_cond_2;
-	private bool scene_cond_3;
 	private bool scene_practice;
 
     bool RanCount = false;
-
     int[] arr;
     int i;
     int j;
     int k = 0;
     int index;
-	int index_con3;
     int tmp;
     int TrialNum;//the offset for every trial
 
+	bool RanCount_3 = false;
+	int[] arr_3;
+	int i_3;
+	int j_3;
+	int k_3 = 0;
+	int index_3;
+	int tmp_3;
+	int TrialNum_3;
+	string plane_3;
 
     // Use this for initialization
     void Start () {
@@ -47,6 +56,8 @@ public class RanTargetSphere : MonoBehaviour {
 		Scene_Cond_1.SetActive (false);
 		Scene_Cond_2.SetActive (false);
 		Scene_Rest.SetActive (false);
+		SubjectA.SetActive (false);
+		SubjectB.SetActive (false);
 
 		print(" ------welcome to the instruction ");
 
@@ -54,6 +65,15 @@ public class RanTargetSphere : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
+
+		if (Input.GetKeyDown (KeyCode.A)) {
+			SubjectA.SetActive (true);
+			SubjectB.SetActive (false);
+		}
+		if (Input.GetKeyDown (KeyCode.S)) {
+			SubjectB.SetActive (true);
+			SubjectA.SetActive (false);
+		}
 			//Press Q to show the instruction ===================================
 			if(Input.GetKeyDown(KeyCode.Q)){
 				Scene_Ins.SetActive (true);
@@ -64,8 +84,10 @@ public class RanTargetSphere : MonoBehaviour {
 				scene_practice = false;
 				scene_cond_1 = false;
 				scene_cond_2 = false;
+				scene_cond_3 = false;
 
 				RanCount = false;
+				RanCount_3 = false;
 				press_button = false;
 				time_rest = 2;
 				print(" ------welcome to the instruction ");
@@ -100,6 +122,9 @@ public class RanTargetSphere : MonoBehaviour {
 					GameObject.Find("XmlData").SendMessage("CreateXML");
 					//GameObject.Find("XmlData").SendMessage("CreateCSV_1");
 
+
+//					GameObject.Find("XmlData").SendMessage("CreateHM_1");
+
 					Scene_Ins.SetActive (false);
 					Scene_Cond_2.SetActive (false);
 					Scene_Rest.SetActive (false);
@@ -124,17 +149,18 @@ public class RanTargetSphere : MonoBehaviour {
 					press_button = false;
 					count_time = false; 
 					if(!scene_practice && k!=0){
-
+					
 						GameObject.Find("XmlData").SendMessage("CreateXML_C1");
 						//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_1");
 					}
 					NewTrial ();
+					GameObject.Find ("XmlData").SendMessage ("CollectPeriod");
 				}
 
 
 				//count time for every trial
 				if(count_time && TimeCond<= 4){
-					
+				
 					Scene_Cond_1.SetActive (true);
 					TimeCond += Time.deltaTime;					
 					ObseverAsw ();
@@ -142,16 +168,17 @@ public class RanTargetSphere : MonoBehaviour {
 				}
 
 				//have a rest for 1 second
-			if(count_time && time_rest <=1 && (press_button || TimeCond >4 ) ){
+				if(count_time && time_rest <=1 && (press_button || TimeCond >4 ) ){
 				Scene_Cond_1.SetActive (false);
 					time_rest += Time.deltaTime;
 					press_button = true;
+					GameObject.Find ("XmlData").SendMessage ("cancel");
 				}
 			}
 
 			//press R to start condition2=======================================
 			if (Input.GetKeyDown (KeyCode.R)) {
-//					GameObject.Find("XmlData").SendMessage("CreateCSV_2");
+					GameObject.Find("XmlData").SendMessage("CreateXML");
 					Scene_Ins.SetActive (false);
 					Scene_Cond_1.SetActive (false);
 					
@@ -177,6 +204,7 @@ public class RanTargetSphere : MonoBehaviour {
 					}
 
 					NewTrial();
+					GameObject.Find ("XmlData").SendMessage ("CollectPeriod");
 				}
 				if (count_time && TimeCond <= 4) {
 					Scene_Cond_2.SetActive (true);
@@ -185,10 +213,11 @@ public class RanTargetSphere : MonoBehaviour {
 
 				}
 				//have a rest for 1 second
-				if(count_time && press_button && time_rest <=1){
+				if(count_time && time_rest <=1 && (press_button || TimeCond >4 ) ){
 					Scene_Cond_2.SetActive (false);
 					time_rest += Time.deltaTime;
-					
+					press_button = true;
+				GameObject.Find ("XmlData").SendMessage ("cancel");
 				}
 
 			}
@@ -196,15 +225,16 @@ public class RanTargetSphere : MonoBehaviour {
 
 			//press T to start condition 3=======================================
 			if(Input.GetKeyDown (KeyCode.T)){
-//					GameObject.Find("XmlData").SendMessage("CreateCSV_3");
+					GameObject.Find("XmlData").SendMessage("CreateXML");
 					Scene_Ins.SetActive (false);
 					scene_practice = false;
 					scene_cond_1 = false;
 					scene_cond_2 = false;
 					scene_cond_3 = true;
 
-					trials = 7;
+					trials = 14;
 					RanCount = false;
+					RanCount_3 = false;
 					press_button = true;
 					time_rest = 2;
 					print(" ------welcome to  condition 3 ");
@@ -218,8 +248,9 @@ public class RanTargetSphere : MonoBehaviour {
 						//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_3");
 					}
 					NewTrial();
-					index_con3 = Random.Range (0,2);
+					RanPlane ();
 
+					GameObject.Find ("XmlData").SendMessage ("CollectPeriod");
 				}
 
 				if (count_time && TimeCond <= 4) {
@@ -227,18 +258,21 @@ public class RanTargetSphere : MonoBehaviour {
 					TimeCond += Time.deltaTime;
 					ObseverAsw ();
 					//randomly showing dots in con1 or con2
-					if (index_con3 == 0) {
+					if (plane_3 == "con1") {
 						Scene_Cond_1.SetActive (true);
+						Scene_Cond_2.SetActive (false);
 					} else {
 						Scene_Cond_2.SetActive (true);
+						Scene_Cond_1.SetActive (false);
 					}
 				}
 				//have a rest for 1 second
-				if(count_time && press_button && time_rest <=1 ){
+				if(count_time && time_rest <=1 && (press_button || TimeCond >4 )  ){
 					Scene_Cond_1.SetActive (false);
 					Scene_Cond_2.SetActive (false);
 					time_rest += Time.deltaTime;
-
+					press_button = true;
+					GameObject.Find ("XmlData").SendMessage ("cancel");
 				}
 			}
 	    }
@@ -309,7 +343,7 @@ public class RanTargetSphere : MonoBehaviour {
 			            }
 		                
 		            RanCount = true;
-		        }
+		    }
 
 
 			//if all trials has been shown, quit condition 1, reshow instruction
@@ -317,6 +351,8 @@ public class RanTargetSphere : MonoBehaviour {
 				k = 0;
 				TskNum = 0;
 				RanCount = false;
+				k_3 = 0;
+				RanCount_3 = false;
 				Scene_Ins.SetActive (true);
 				Scene_Cond_1.SetActive (false);
 				Scene_Cond_2.SetActive (false);
@@ -324,6 +360,7 @@ public class RanTargetSphere : MonoBehaviour {
 				scene_cond_1 = false;
 				scene_cond_2 = false;
 				scene_practice = false;
+				GameObject.Find ("XmlData").SendMessage ("cancel");
 				print("finish the first round----and return to the instruction page-------");
 			}
 
@@ -384,7 +421,55 @@ public class RanTargetSphere : MonoBehaviour {
 	    }
 
 
+	//generate equimultiple random target dot
+	void RanPlane(){
 
+		//generate random arry
+		if (!RanCount_3) {
+			arr_3 = new int[trials];
+
+			for (i_3 = 1; i_3 <= trials; i_3++) {
+				arr_3 [i_3 - 1] = i_3;
+			}
+
+			for (j_3 = trials; j_3 >= 1; j_3--) {
+				index_3 = Random.Range (0,trials); //get 0-trials randomly
+
+				tmp_3 = arr_3[index_3];
+				arr_3 [index_3] = arr_3 [j_3 - 1];
+				arr_3 [j_3 - 1] = tmp_3;
+			}
+
+			RanCount_3 = true;
+		}
+
+		//show random condition
+		if (RanCount_3) {
+			TrialNum_3 = arr_3 [k_3];
+
+			if (TrialNum_3 >= 1 && TrialNum_3 <= trials/2) {
+				k_3++;
+				plane_3 = "con1";
+
+			}
+			if (TrialNum_3 >= trials / 2 + 1 && TrialNum_3 <= trials) {
+				k_3++;
+				plane_3 = "con2";
+
+			}
+
+		}
+	}
+
+	void SubSelect_A(){
+		SubjectA.SetActive (true);
+
+	}
+
+	void SubSelect_B(){
+		SubjectB.SetActive (true);
+
+	}
     //show corresponding Dot 
     void DotPosition_1(){
 			DotNum = "-3";
