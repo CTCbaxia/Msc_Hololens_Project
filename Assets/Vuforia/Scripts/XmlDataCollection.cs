@@ -29,6 +29,7 @@ public class XmlDataCollection : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		Subject = RanTargetSphere.Subject;
 		DotNum = RanTargetSphere.DotNum ;
 		ObsAnw = RanTargetSphere.ObsAnw ;
 		TskNum = RanTargetSphere.TskNum.ToString() ;
@@ -44,50 +45,40 @@ public class XmlDataCollection : MonoBehaviour {
 
 //		CreateXML();
 
-		if (Input.GetKeyDown (KeyCode.A)) {
-			Subject = "A";
-			print ("set subject A");
-		}
-		if (Input.GetKeyDown (KeyCode.S)) {
-			Subject = "B";
-		}
+//		if (Input.GetKeyDown (KeyCode.A)) {
+//			Subject = "A";
+//			GameObject.Find("TagOverlay").SendMessage("SelectSub_A");
+//		}
+//		if (Input.GetKeyDown (KeyCode.S)) {
+//			Subject = "B";
+//			//GameObject.Find ("TagOverlay").SendMessage ("SelectSub_B");
+//		}
 
 	}
-//	----------------------- test for HM data--------------0815
-	void CollectPeriod(){
-		if(scene_cond_1){
-			InvokeRepeating ("test1", 0, 0.5F);
-		}
-		if(scene_cond_2){
-			InvokeRepeating ("test2", 0, 0.5F);
-		}
-		if(scene_cond_3){
-			InvokeRepeating ("test3", 0, 0.5F);
-		}
-	}
 
-	void cancel(){
-		CancelInvoke ();
-		print ("cancel invoke hm");
-
-	}
-	void test1(){
-		print ("start invoke hm--1");
-	}
-	void test2(){
-		print ("start invoke hm--2");
-	}
-	void test3(){
-		print ("start invoke hm--3");
-	}
-
-//	----------------------- test for HM data--------------0815
 
 	void SelectSubTest(){
 		if(Subject == "A"){
 			path = Application.dataPath + "/UnityDataCollection_A.xml";
 		}else if(Subject == "B"){
 			path = Application.dataPath + "/UnityDataCollection_B.xml";
+		}
+	}
+
+	//collect headmovement data
+	void CollectPeriod()
+	{
+		if (scene_cond_1)
+		{
+			CreateXML_C1();
+		}
+		if (scene_cond_2)
+		{
+			CreateXML_C2();
+		}
+		if (scene_cond_3)
+		{
+			CreateXML_C3();
 		}
 	}
 

@@ -100,10 +100,10 @@
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\link.xml" />
      <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
+     <None Include="Assets\UnityDataCollection_A.xml" />
      <None Include="Assets\Vuforia\Shaders\RenderVideoBackground.shader" />
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\Editor\Vuforia\CylinderTargetTextures\Sticker\authoringinfo.xml" />
-     <None Include="Assets\UnityDataCollection_A.xml" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
      <None Include="Assets\StreamingAssets\QCAR\StonesAndChips.xml" />
      <None Include="Assets\license_3rdpartynotice.txt" />
@@ -111,6 +111,7 @@
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
+     <None Include="Assets\UnityDataCollection_B.xml" />
      <None Include="Assets\StreamingAssets\Vuforia\Sticker.xml" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
  <Reference Include="UnityEngine.UI">
