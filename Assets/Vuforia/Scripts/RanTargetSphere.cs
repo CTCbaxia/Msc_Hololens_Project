@@ -1,20 +1,25 @@
 ﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RanTargetSphere : MonoBehaviour {
+public class RanTargetSphere : MonoBehaviour
+{
+	public GameObject SubjectA;
+	public GameObject SubjectB;
 
-    public GameObject Dot1, Dot2, Dot3, Dot4, Dot5, Dot6, Dot7;
+	public GameObject Dot1, Dot2, Dot3, Dot4, Dot5, Dot6, Dot7;
 	public GameObject Ring1, Ring2, Ring3, Ring4, Ring5, Ring6, Ring7;
-    public int trials = 14;//the number of all trial in one condition
+	public int trials = 14;//the number of all trial in one condition
 	public GameObject Scene_Ins;
 	public GameObject Scene_Cond_1;
 	public GameObject Scene_Cond_2;
 	public GameObject Scene_Rest;
 	public AudioSource Beep_Sound;
-	public GameObject SubjectA;
-	public GameObject SubjectB;
+	public AudioSource SubjectA_Sound;
+	public AudioSource SubjectB_Sound;
 
+	public static string Subject;
 	public static string DotNum;//condition1
 	public static string RingNum;//condition2
 	public static float TimeCond = 0;
@@ -23,22 +28,23 @@ public class RanTargetSphere : MonoBehaviour {
 
 	private bool press_button;
 	private float time_rest = 0;
-//	private float ring_show = 0;
+	private float ring_show = 0;
 
 	public static bool scene_cond_1;
 	public static bool scene_cond_2;
 	public static bool scene_cond_3;
-	private bool count_time;
 	private bool scene_practice;
+	private bool count_time;
+	int hm_count = 0;
 
-    bool RanCount = false;
-    int[] arr;
-    int i;
-    int j;
-    int k = 0;
-    int index;
-    int tmp;
-    int TrialNum;//the offset for every trial
+	bool RanCount = false;
+	int[] arr;
+	int i;
+	int j;
+	int k = 0;
+	int index;
+	int tmp;
+	int TrialNum;//the offset for every trial
 
 	bool RanCount_3 = false;
 	int[] arr_3;
@@ -50,253 +56,281 @@ public class RanTargetSphere : MonoBehaviour {
 	int TrialNum_3;
 	string plane_3;
 
-    // Use this for initialization
-    void Start () {
-		Scene_Ins.SetActive (true);
-		Scene_Cond_1.SetActive (false);
-		Scene_Cond_2.SetActive (false);
-		Scene_Rest.SetActive (false);
-		SubjectA.SetActive (false);
-		SubjectB.SetActive (false);
+	//for head movement
+	double _nextTime = 0;
 
+
+	// Use this for initialization
+	void Start()
+	{
+		ShowIns();
+//		GameObject.Find("XmlData").SendMessage("CreateCSV_1");
 		print(" ------welcome to the instruction ");
+		_nextTime = Time.time;
+	}
 
-	    }
-    
-    // Update is called once per frame
-    void Update () {
+
+	// Update is called once per frame
+	void Update()
+	{
+
+		//for logging the head movement data
+		if (Time.time > _nextTime) {
+			_nextTime = Time.time + 0.1;
+			GameObject.Find("XmlData").SendMessage("CollectPeriod");
+		}
+
+
+		//Press Q to show the instruction ===================================
+		if (Input.GetKeyDown(KeyCode.Q))
+		{
+			ShowIns();
+			print(" ------welcome to the instruction ");
+		}
 
 		if (Input.GetKeyDown (KeyCode.A)) {
 			SubjectA.SetActive (true);
 			SubjectB.SetActive (false);
+			Scene_Ins.SetActive(false);
+			Subject = "A";
+			SubjectA_Sound.Play ();
 		}
 		if (Input.GetKeyDown (KeyCode.S)) {
 			SubjectB.SetActive (true);
 			SubjectA.SetActive (false);
+			Scene_Ins.SetActive(false);
+			Subject = "B";
+			SubjectB_Sound.Play ();
 		}
-			//Press Q to show the instruction ===================================
-			if(Input.GetKeyDown(KeyCode.Q)){
-				Scene_Ins.SetActive (true);
-				Scene_Cond_1.SetActive (false);
-				Scene_Cond_2.SetActive (false);
-				Scene_Rest.SetActive (false);
 
-				scene_practice = false;
-				scene_cond_1 = false;
-				scene_cond_2 = false;
-				scene_cond_3 = false;
+		//Press W to start the practice ===================================
+		if (Input.GetKeyDown(KeyCode.W))
+		{
+			CondScene ();
+			Scene_Cond_2.SetActive(false);
+			scene_practice = true;
+			scene_cond_1 = true;
+			scene_cond_2 = false;
+			scene_cond_3 = false;
 
-				RanCount = false;
-				RanCount_3 = false;
+			trials = 7;
+			RanCount = false;
+			press_button = true;
+			time_rest = 2;
+			print(" ------welcome to the practice section ");
+		}
+
+		//have a rest when having done half of the trials
+		if (k == 35)
+		{
+			HaveARest();
+		}
+
+		//press E to start condition1=======================================
+		if (Input.GetKeyDown(KeyCode.E))
+		{
+			GameObject.Find("XmlData").SendMessage("CreateXML");
+//			GameObject.Find("XmlData").SendMessage("CreateHM_1");
+
+			CondScene ();
+			Scene_Cond_2.SetActive(false);
+
+			scene_practice = false;
+			scene_cond_1 = true;
+			scene_cond_2 = false;
+			scene_cond_3 = false;
+
+			trials = 14;
+			RanCount = false;
+			press_button = true;
+			time_rest = 2;
+			print(" ------welcome to  condition 1 ");
+
+		}
+
+
+		//start all trials
+		if (scene_cond_1)
+		{
+			if (press_button && time_rest >1)
+			{
 				press_button = false;
-				time_rest = 2;
-				print(" ------welcome to the instruction ");
-
+				count_time = false;
+				hm_count = 0;
+				if (!scene_practice && k != 0)
+				{                	
+					GameObject.Find("XmlData").SendMessage("CreateXML_C1");
+				}
+				NewTrial();
+				//GameObject.Find("XmlData").SendMessage("CollectPeriod");
 			}
-			//Press W to start the practice ===================================
-	        if(Input.GetKeyDown(KeyCode.W)){
-					Scene_Ins.SetActive (false);
-					Scene_Cond_2.SetActive (false);
-					Scene_Rest.SetActive (false);
-
-					scene_practice = true;
-					scene_cond_1 = true;
-					scene_cond_2 = false;
-
-					trials = 7;
-					RanCount = false;
-					press_button = true;
-					print(" ------welcome to the practice section ");
-				
-		    }
-
-			//have a rest when having done half of the trials
-			if (k == 4) {
-				HaveARest ();
+			//count time for every trial
+			if (count_time && TimeCond <= 4)
+			{
+				Scene_Cond_1.SetActive(true);
+				TimeCond += Time.deltaTime;
+				ObseverAsw();
 			}
-			
-			//press E to start condition1=======================================
-			if (Input.GetKeyDown (KeyCode.E)) {
-//					GameObject.Find ("SubjectB").SetActive (false);
-//					GameObject.Find ("SubjectA").SetActive (false);
-					GameObject.Find("XmlData").SendMessage("CreateXML");
-					//GameObject.Find("XmlData").SendMessage("CreateCSV_1");
-
-
-//					GameObject.Find("XmlData").SendMessage("CreateHM_1");
-
-					Scene_Ins.SetActive (false);
-					Scene_Cond_2.SetActive (false);
-					Scene_Rest.SetActive (false);
-
-					scene_practice = false;
-					scene_cond_1 = true;
-					scene_cond_2 = false;
-					scene_cond_3 = false;
-
-					trials = 7;
-					RanCount = false;
-					press_button = true;
-					time_rest = 2;
-					print(" ------welcome to  condition 1 ");
-
-			}
-
-			//start all trials
-			if(scene_cond_1){
-			
-				if(press_button && time_rest >1){
-					press_button = false;
-					count_time = false; 
-					if(!scene_practice && k!=0){
-					
-						GameObject.Find("XmlData").SendMessage("CreateXML_C1");
-						//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_1");
-					}
-					NewTrial ();
-					GameObject.Find ("XmlData").SendMessage ("CollectPeriod");
-				}
-
-
-				//count time for every trial
-				if(count_time && TimeCond<= 4){
-				
-					Scene_Cond_1.SetActive (true);
-					TimeCond += Time.deltaTime;					
-					ObseverAsw ();
-					
-				}
-
-				//have a rest for 1 second
-				if(count_time && time_rest <=1 && (press_button || TimeCond >4 ) ){
-				Scene_Cond_1.SetActive (false);
-					time_rest += Time.deltaTime;
-					press_button = true;
-					GameObject.Find ("XmlData").SendMessage ("cancel");
-				}
-			}
-
-			//press R to start condition2=======================================
-			if (Input.GetKeyDown (KeyCode.R)) {
-					GameObject.Find("XmlData").SendMessage("CreateXML");
-					Scene_Ins.SetActive (false);
-					Scene_Cond_1.SetActive (false);
-					
-					scene_practice = false;
-					scene_cond_1 = false;
-					scene_cond_2 = true;
-					scene_cond_3 = false;
-
-					trials = 7;
-					RanCount = false;
-					press_button = true;
-					time_rest = 2;
-					print(" ------welcome to  condition 2 ");
-
-			}
-			if (scene_cond_2) {
-				if (press_button && time_rest >1) {
-					press_button = false;
-					count_time = false;
-					if (k != 0) {
-						GameObject.Find("XmlData").SendMessage("CreateXML_C2");
-						//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_2");
-					}
-
-					NewTrial();
-					GameObject.Find ("XmlData").SendMessage ("CollectPeriod");
-				}
-				if (count_time && TimeCond <= 4) {
-					Scene_Cond_2.SetActive (true);
-					TimeCond += Time.deltaTime;
-					ObseverAsw ();
-
-				}
-				//have a rest for 1 second
-				if(count_time && time_rest <=1 && (press_button || TimeCond >4 ) ){
-					Scene_Cond_2.SetActive (false);
-					time_rest += Time.deltaTime;
-					press_button = true;
-				GameObject.Find ("XmlData").SendMessage ("cancel");
-				}
-
+			//have a rest for 1 second
+			if (count_time && time_rest <= 1 && (press_button || TimeCond > 4)  )
+			{
+				Scene_Cond_1.SetActive(false);
+				time_rest += Time.deltaTime;
+				press_button = true;
 			}
 
 
-			//press T to start condition 3=======================================
-			if(Input.GetKeyDown (KeyCode.T)){
-					GameObject.Find("XmlData").SendMessage("CreateXML");
-					Scene_Ins.SetActive (false);
-					scene_practice = false;
-					scene_cond_1 = false;
-					scene_cond_2 = false;
-					scene_cond_3 = true;
+		}
 
-					trials = 14;
-					RanCount = false;
-					RanCount_3 = false;
-					press_button = true;
-					time_rest = 2;
-					print(" ------welcome to  condition 3 ");
+		//press R to start condition2=======================================
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			GameObject.Find("XmlData").SendMessage("CreateXML");
+			CondScene ();
+			Scene_Cond_1.SetActive(false);
+
+			scene_practice = false;
+			scene_cond_1 = false;
+			scene_cond_2 = true;
+			scene_cond_3 = false;
+
+			trials = 28;
+			RanCount = false;
+			press_button = true;
+			time_rest = 2;
+			print(" ------welcome to  condition 2 ");
+		}
+
+
+		if (scene_cond_2)
+		{
+
+			if (press_button && time_rest > 1)
+			{
+
+				press_button = false;
+				count_time = false;
+				if (k != 0)
+				{
+					GameObject.Find("XmlData").SendMessage("CreateXML_C2");
+				}
+				NewTrial();
 			}
-			if (scene_cond_3) {
-				if (press_button && time_rest > 1) {
-					press_button = false;
-					count_time = false;
-					if (k != 0) {
-						GameObject.Find("XmlData").SendMessage("CreateXML_C3");
-						//					GameObject.Find("XmlData").SendMessage("DataCollectCSV_3");
-					}
-					NewTrial();
-					RanPlane ();
 
-					GameObject.Find ("XmlData").SendMessage ("CollectPeriod");
+			if (count_time && TimeCond <= 4)
+			{
+				Scene_Cond_2.SetActive(true);
+				TimeCond += Time.deltaTime;
+				ObseverAsw();
+
+			}
+			//have a rest for 1 second
+			if (count_time && time_rest <= 1 &&(press_button || TimeCond > 4))
+			{
+				Scene_Cond_2.SetActive(false);
+				time_rest += Time.deltaTime;
+				press_button = true;
+				//GameObject.Find("XmlData").SendMessage("CancelHM");
+			}
+
+		}
+
+		//press T to start condition 3=======================================
+		if (Input.GetKeyDown(KeyCode.T))
+		{
+			GameObject.Find("XmlData").SendMessage("CreateXML");
+			CondScene ();
+			scene_practice = false;
+			scene_cond_1 = false;
+			scene_cond_2 = false;
+			scene_cond_3 = true;
+
+			trials = 70;
+			RanCount = false;
+			RanCount_3 = false;
+			press_button = true;
+			time_rest = 2;
+			print(" ------welcome to  condition 3 ");
+
+		}
+
+		if (scene_cond_3)
+		{
+			if (press_button && time_rest >1)
+			{
+				press_button = false;
+				count_time = false;
+				if (k != 0)
+				{
+					GameObject.Find("XmlData").SendMessage("CreateXML_C3");
 				}
+				NewTrial();
+				RanPlane();
+			}
 
-				if (count_time && TimeCond <= 4) {
-
-					TimeCond += Time.deltaTime;
-					ObseverAsw ();
-					//randomly showing dots in con1 or con2
-					if (plane_3 == "con1") {
-						Scene_Cond_1.SetActive (true);
-						Scene_Cond_2.SetActive (false);
-					} else {
-						Scene_Cond_2.SetActive (true);
-						Scene_Cond_1.SetActive (false);
-					}
+			if (count_time && TimeCond <= 4)
+			{
+				TimeCond += Time.deltaTime;
+				ObseverAsw();
+				//randomly showing dots in con1 or con2
+				if (plane_3 == "con1")
+				{
+					Scene_Cond_1.SetActive(true);
+					Scene_Cond_2.SetActive(false);
 				}
-				//have a rest for 1 second
-				if(count_time && time_rest <=1 && (press_button || TimeCond >4 )  ){
-					Scene_Cond_1.SetActive (false);
-					Scene_Cond_2.SetActive (false);
-					time_rest += Time.deltaTime;
-					press_button = true;
-					GameObject.Find ("XmlData").SendMessage ("cancel");
+				else
+				{
+					Scene_Cond_2.SetActive(true);
+					Scene_Cond_1.SetActive(false);
 				}
 			}
-	    }
-		
+			//have a rest for 1 second
+			if (count_time && time_rest <= 1 && (press_button || TimeCond > 4))
+			{
+				Scene_Cond_1.SetActive(false);
+				Scene_Cond_2.SetActive(false);
+				time_rest += Time.deltaTime;
+				press_button = true;
+			}
+		}
+	}
+	void CondScene(){
+		Scene_Ins.SetActive(false);
+		SubjectA.SetActive (false);
+		SubjectB.SetActive (false);
+		Scene_Rest.SetActive(false);
+	}
 	//initialize for every trial
-	void NewTrial(){
+
+	void NewTrial()
+	{
 		time_rest = 0;
-		TimeCond = 0; 
+		TimeCond = 0;
 		count_time = true;
 		ObsAnw = " ";
-		RanTarget ();	
+		RanTarget();
+
 	}
-		
+
 	//if the observer gives the answer
-	void ObseverAsw(){
-		if(Input.GetKeyDown(KeyCode.J) ){
+	void ObseverAsw()
+	{
+		if (Input.GetKeyDown(KeyCode.J))
+		{
 			press_button = true;
-			ObsAnw = "nonright";//change to 0
+			ObsAnw = "right";//reverse direction, change to 1
+			print(TimeCond);
 		}
-		if(Input.GetKeyDown(KeyCode.K) ){
+
+		if (Input.GetKeyDown(KeyCode.K))
+		{
 			press_button = true;
-			ObsAnw = "right";//change to 1
+			ObsAnw = "left";//reverse direction, change to 0
+			print(TimeCond);
 		}
 	}
+
+
 
 	void HaveARest(){
 		if (press_button) {
@@ -316,6 +350,29 @@ public class RanTargetSphere : MonoBehaviour {
 			press_button = true;
 			Scene_Rest.SetActive (false);
 		}
+
+	}
+
+	void ShowIns() {
+		Scene_Ins.SetActive(true);
+		Scene_Cond_1.SetActive(false);
+		Scene_Cond_2.SetActive(false);
+		Scene_Rest.SetActive(false);
+		SubjectA.SetActive (false);
+		SubjectB.SetActive (false);
+		scene_practice = false;
+		scene_cond_1 = false;
+		scene_cond_2 = false;
+		scene_cond_3 = false;
+
+		RanCount = false;
+		RanCount_3 = false;
+		press_button = false;
+		count_time = false;
+
+		k = 0;
+		TskNum = 0;
+		k_3 = 0;
 
 	}
 
@@ -346,23 +403,12 @@ public class RanTargetSphere : MonoBehaviour {
 		    }
 
 
-			//if all trials has been shown, quit condition 1, reshow instruction
-			if (k >= trials) {
-				k = 0;
-				TskNum = 0;
-				RanCount = false;
-				k_3 = 0;
-				RanCount_3 = false;
-				Scene_Ins.SetActive (true);
-				Scene_Cond_1.SetActive (false);
-				Scene_Cond_2.SetActive (false);
-				count_time = false;
-				scene_cond_1 = false;
-				scene_cond_2 = false;
-				scene_practice = false;
-				GameObject.Find ("XmlData").SendMessage ("cancel");
-				print("finish the first round----and return to the instruction page-------");
+			if (k >= trials)
+			{
+				ShowIns();
+				print("return to the instruction page-------");
 			}
+
 
 	        //show random target
 			if (RanCount) {
@@ -460,16 +506,19 @@ public class RanTargetSphere : MonoBehaviour {
 
 		}
 	}
+//
+//	void SelectSub_A(){
+//		SubjectA.SetActive (true);
+//
+//
+//	}
+//
+//	void SelectSub_B(){
+//		SubjectB.SetActive (true);
+//		Scene_Ins.SetActive(false);
+//
+//	}
 
-	void SubSelect_A(){
-		SubjectA.SetActive (true);
-
-	}
-
-	void SubSelect_B(){
-		SubjectB.SetActive (true);
-
-	}
     //show corresponding Dot 
     void DotPosition_1(){
 			DotNum = "-3";
